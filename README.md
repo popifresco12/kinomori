@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+# 🍣 Kinomori 3.0 — Award-Winning Restaurant Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Asia meets Morocco in every bite. Tamraght, Morocco.
 
-Currently, two official plugins are available:
+**Stack:** React 19 · TypeScript · Vite · Tailwind CSS v4 · Framer Motion · Zustand · i18next
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**i18n:** English · Español · Français · 中文 (4 idiomas)
 
-## React Compiler
+## Pages
+| Route | Page |
+|---|---|
+| `/` | Landing — cinematic hero, about cards, reviews |
+| `/story` | Our Story — vertical animated timeline |
+| `/menu` | Menu highlights (expandible) |
+| `/shop` | Online shop — cart, filters, WhatsApp checkout |
+| `/contact` | Contact form — react-hook-form + zod |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Dev
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd kinomori-3.0
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Design goals
+- Awwwards-level visual polish
+- Framer Motion scroll animations throughout
+- Glassmorphism + grain texture effect
+- i18n via react-i18next (JSON locales)
+- Cart persisted in localStorage via Zustand
+- WhatsApp checkout (Morocco market)
+- Fully responsive (mobile-first)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Built with Kimi K2.6 "vibe coding" workflow — prompts from @viktoroddy / motionsites.ai
