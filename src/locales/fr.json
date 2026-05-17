@@ -1,0 +1,110 @@
+{
+  "common": {
+    "language": "Langue",
+    "reserve": "Réserver",
+    "order_now": "Commander",
+    "read_more": "Lire Plus",
+    "add_to_cart": "Ajouter au Panier",
+    "subtotal": "Sous-Total",
+    "checkout": "Commander",
+    "empty_cart": "Votre panier est vide",
+    "mad": "MAD",
+    "currency": "MAD"
+  },
+  "nav": {
+    "home": "Accueil",
+    "story": "Notre Histoire",
+    "menu": "Menu",
+    "shop": "Boutique",
+    "contact": "Contact",
+    "cart": "Panier"
+  },
+  "hero": {
+    "title": "Kinomori",
+    "tagline": "L'Asie rencontre le Maroc à chaque bouchée",
+    "cta_reserve": "Réserver",
+    "cta_order": "Commander"
+  },
+  "about": {
+    "title": "Notre Histoire",
+    "origin_title": "Nés à Tamraght",
+    "origin_text": "Là où les Montagnes de l'Atlas rencontrent l'Atlantique, Kinomori est née de l'amitié entre familles marocaines et chinoises unies par l'amour de la bonne cuisine.",
+    "philosophy_title": "Notre Philosophie",
+    "philosophy_text": "Précision culinaire chinoise, hospitalité marocaine. Chaque plat honore les deux traditions.",
+    "chef_title": "Le Chef",
+    "chef_name": "Chef Li Wei",
+    "chef_quote": "Cuisiner, c'est dire je t'aime sans mots.",
+    "timeline_title": "Notre Parcours",
+    "year_2021": "2021 — Premier Restaurant",
+    "year_2022": "2022 — Expansion du Menu",
+    "year_2023": "2023 — Livre de Cuisine",
+    "year_2024": "2024 — Boutique en Ligne",
+    "values_title": "Nos Valeurs",
+    "val_fresh": "Ingrédients Frais",
+    "val_respect": "Respect",
+    "val_community": "Communauté",
+    "val_sustainability": "Durabilité"
+  },
+  "reviews": {
+    "title": "Ce Qu'en Disent Les Gens",
+    "r1": "Le meilleur sushi de la région de Taghazout ! Frais, savoureux et magnifiquement présenté.",
+    "author1": "Marie L., Paris",
+    "r2": "Le ramen est absolument incroyable — véritable Tonkotsu, on sent les heures de bouillon.",
+    "author2": "Thomas H., Londres",
+    "r3": "Kinomori, c'est comme à la maison. L'ambiance, la nourriture, les gens. Incontournable.",
+    "author3": "Yuki T., Tokyo"
+  },
+  "story": {
+    "page_title": "Notre Histoire — Kinomori"
+  },
+  "shop": {
+    "page_title": "Boutique Kinomori",
+    "categories": {
+      "sauces": "Sauces",
+      "spices": "Épices",
+      "cookware": "Ustensiles",
+      "gifts": "Cadeaux"
+    },
+    "in_stock": "En Stock",
+    "limited_stock": "Stock Limité",
+    "out_of_stock": "Épuisé",
+    "checkout_whatsapp": "Commander via WhatsApp"
+  },
+  "contact": {
+    "page_title": "Contact",
+    "name": "Votre Nom",
+    "email": "Email",
+    "phone": "Téléphone (optionnel)",
+    "subject": "Sujet",
+    "message": "Message",
+    "newsletter": "S'abonner à notre newsletter",
+    "send": "Envoyer",
+    "success": "Merci ! Nous vous contacterons bientôt.",
+    "address": "Adresse",
+    "hours": "Horaires",
+    "hours_text": "9h00 — 23h00"
+  },
+  "menu": {
+    "page_title": "Notre Menu",
+    "dimsum": {
+      "name": "Dim Sum Cantonais",
+      "desc": "Brioches vapeur, dumplings et siu mai — fait main chaque matin",
+      "price": "45"
+    },
+    "ramen": {
+      "name": "Ramen Tonkotsu",
+      "desc": "Bouillon osseux de porc 18h, chashu, œuf ajitama, nori",
+      "price": "75"
+    },
+    "sushi": {
+      "name": "Sélection du Chef",
+      "desc": "10 pièces nigiri omakase — poisson de saison",
+      "price": "120"
+    },
+    "teppanyaki": {
+      "name": "Set Teppanyaki",
+      "desc": "Légumes grillés, fruits de mer et wagyu sur plaque de fer",
+      "price": "180"
+    }
+  }
+}

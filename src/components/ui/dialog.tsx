@@ -1,0 +1,2 @@
+'use client';export function Dialog({children}:{children:React.ReactNode}){return <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/40'>{children}</div>}
+export function DialogContent({className='',children}:{className?:string,children?:React.ReactNode}){return <div className={`bg-white rounded-2xl shadow-2xl p-6 max-w-lg w-full relative ${className}`}>{children}</div>}

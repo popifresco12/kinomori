@@ -1,0 +1,110 @@
+{
+  "common": {
+    "language": "语言",
+    "reserve": "预定桌位",
+    "order_now": "立即下单",
+    "read_more": "了解更多",
+    "add_to_cart": "加入购物车",
+    "subtotal": "小计",
+    "checkout": "结账",
+    "empty_cart": "购物车为空",
+    "mad": "迪拉姆",
+    "currency": "迪拉姆"
+  },
+  "nav": {
+    "home": "首页",
+    "story": "我们的故事",
+    "menu": "菜单",
+    "shop": "商店",
+    "contact": "联系",
+    "cart": "购物车"
+  },
+  "hero": {
+    "title": "金森里",
+    "tagline": "亚洲与摩洛哥在每一口中相遇",
+    "cta_reserve": "预订餐桌",
+    "cta_order": "外卖点餐"
+  },
+  "about": {
+    "title": "我们的故事",
+    "origin_title": "诞生于 Tamraght",
+    "origin_text": "在阿特拉斯山脉与大西洋交汇的地方，Kinomori 诞生于摩洛哥与华裔家庭因热爱美食而结下的友谊之中。",
+    "philosophy_title": "我们的理念",
+    "philosophy_text": "中华烹饪之精巧，摩洛哥待客之热忱。每一道菜肴都承载着两种传统。",
+    "chef_title": "主厨",
+    "chef_name": "李伟大厨",
+    "chef_quote": "烹饪是我用沉默说爱的方式。",
+    "timeline_title": "我们的历程",
+    "year_2021": "2021 — 首家门店",
+    "year_2022": "2022 — 菜单扩展",
+    "year_2023": "2023 — 食谱出版",
+    "year_2024": "2024 — 线上商店",
+    "values_title": "我们坚持",
+    "val_fresh": "新鲜食材",
+    "val_respect": "尊重",
+    "val_community": "社区",
+    "val_sustainability": "可持续发展"
+  },
+  "reviews": {
+    "title": "顾客评价",
+    "r1": "塔加祖特地区最好的寿司！新鲜、美味、摆盘精致。",
+    "author1": "Maria L., 马德里",
+    "r2": "拉面绝对棒极了——正宗的豚骨拉面，能喝出熬制数小时的汤底精华。",
+    "author2": "Tom H., 伦敦",
+    "r3": "在 Kinomori 就像回家一样。氛围、食物、人都很棒。必去！",
+    "author3": "Yuki T., 东京"
+  },
+  "story": {
+    "page_title": "我们的故事 — Kinomori"
+  },
+  "shop": {
+    "page_title": "Kinomori 商店",
+    "categories": {
+      "sauces": "酱料",
+      "spices": "香料",
+      "cookware": "厨具",
+      "gifts": "礼品套装"
+    },
+    "in_stock": "现货",
+    "limited_stock": "少量现货",
+    "out_of_stock": "售罄",
+    "checkout_whatsapp": "通过 WhatsApp 结账"
+  },
+  "contact": {
+    "page_title": "联系我们",
+    "name": "您的姓名",
+    "email": "电子邮件",
+    "phone": "电话（可选）",
+    "subject": "主题",
+    "message": "留言",
+    "newsletter": "订阅我们的通讯",
+    "send": "发送",
+    "success": "谢谢！我们会尽快联系您。",
+    "address": "地址",
+    "hours": "营业时间",
+    "hours_text": "上午9:00 — 晚上11:00"
+  },
+  "menu": {
+    "page_title": "菜单",
+    "dimsum": {
+      "name": "广式点心",
+      "desc": "蒸包、饺子和小笼包 — 每日手工制作",
+      "price": "45"
+    },
+    "ramen": {
+      "name": "豚骨拉面",
+      "desc": "18小时猪骨汤底、叉烧、溏心蛋、海苔",
+      "price": "75"
+    },
+    "sushi": {
+      "name": "主厨精选寿司",
+      "desc": "10贯主厨发办寿司 — 时令鲜鱼",
+      "price": "120"
+    },
+    "teppanyaki": {
+      "name": "铁板烧套餐",
+      "desc": "铁板烧蔬菜、海鲜和和牛",
+      "price": "180"
+    }
+  }
+}
