@@ -25,6 +25,9 @@
     "reviews": {
       "title": "What They Say",
       "more": "see more reviews"
+    },
+    "contact": {
+      "sent": "Message sent!"
     }
   }
 }

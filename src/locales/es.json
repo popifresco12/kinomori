@@ -1,166 +1,33 @@
 {
   "common": {
-    "language": "Idioma",
-    "reserve": "Reservar Mesa",
-    "order_now": "Pedir Ahora",
-    "read_more": "Leer Más",
-    "add_to_cart": "Añadir al Carrito",
-    "subtotal": "Subtotal",
-    "checkout": "Finalizar",
-    "empty_cart": "Tu carrito está vacío",
-    "mad": "MAD",
-    "currency": "MAD"
-  },
-  "nav": {
-    "home": "Inicio",
-    "story": "Nuestra Historia",
-    "menu": "Menú",
-    "shop": "Tienda",
-    "contact": "Contacto",
-    "cart": "Carrito"
-  },
-  "hero": {
-    "title": "Kinomori",
-    "tagline": "Asia se encuentra con Marruecos en cada bocado",
-    "cta_reserve": "Reservar Mesa",
-    "cta_order": "Pedir a Domicilio"
-  },
-  "about": {
-    "title": "Nuestra Historia",
-    "origin_title": "Nacidos en Tamraght",
-    "origin_text": "Donde las Montañas del Atlas se encuentran con el Atlántico, Kinomori nació de la amistad entre familias marroquíes y chinas unidas por el amor a la buena mesa.",
-    "philosophy_title": "Nuestra Filosofía",
-    "philosophy_text": "Precisión culinaria china, hospitalidad marroquí. Cada plato honra ambas tradiciones.",
-    "chef_title": "El Chef",
-    "chef_name": "Chef Li Wei",
-    "chef_quote": "Cocinar es mi forma de decir te quiero sin palabras.",
-    "timeline_title": "Nuestro Camino",
-    "year_2021": "2021 — Primer Local",
-    "year_2022": "2022 — Expansión del Menú",
-    "year_2023": "2023 — Libro de Cocina",
-    "year_2024": "2024 — Tienda Online",
-    "values_title": "En Qué Creemos",
-    "val_fresh": "Ingredientes Frescos",
-    "val_respect": "Respeto",
-    "val_community": "Comunidad",
-    "val_sustainability": "Sostenibilidad"
-  },
-  "reviews": {
-    "title": "Lo Que Dicen",
-    "r1": "¡El mejor sushi de la zona de Taghazout! Fresco, sabroso y con una presentación preciosa.",
-    "author1": "María L., Madrid",
-    "r2": "El ramen es absolutamente increíble — auténtico Tonkotsu, se nota las horas de caldo.",
-    "author2": "Tom H., Londres",
-    "r3": "Kinomori se siente como en casa. El ambiente, la comida, la gente. Imprescindible.",
-    "author3": "Yuki T., Tokio"
-  },
-  "story": {
-    "page_title": "Nuestra Historia — Kinomori"
-  },
-  "shop": {
-    "page_title": "Tienda Kinomori",
-    "categories": {
-      "sauces": "Salsas",
-      "spices": "Especias",
-      "cookware": "Utensilios",
-      "gifts": "Cajas Regalo"
+    "nav": {
+      "home": "Inicio",
+      "story": "Nuestra Historia",
+      "menu": "Menú",
+      "shop": "Tienda",
+      "contact": "Contacto"
     },
-    "in_stock": "Disponible",
-    "limited_stock": "Stock Limitado",
-    "out_of_stock": "Agotado",
-    "checkout_whatsapp": "Finalizar por WhatsApp"
-  },
-  "contact": {
-    "page_title": "Contacto",
-    "name": "Tu Nombre",
-    "email": "Correo Electrónico",
-    "phone": "Teléfono (opcional)",
-    "subject": "Asunto",
-    "message": "Mensaje",
-    "newsletter": "Suscríbete a nuestra newsletter",
-    "send": "Enviar Mensaje",
-    "success": "¡Gracias! Te contactaremos pronto.",
-    "address": "Dirección",
-    "hours": "Horario Apertura",
-    "hours_text": "9:00 AM — 11:00 PM"
-  },
-  "menu": {
-    "page_title": "Nuestro Menú",
-    "dimsum": {
-      "name": "Dim Sum Cantonés",
-      "desc": "Bollos al vapor, dumplings y siu mai — hechos a mano cada mañana",
-      "price": "45"
+    "hero": {
+      "title": "Kinomori",
+      "tagline": "Asia se encuentra con Marruecos en cada bocado",
+      "cta_reserve": "Reservar Mesa",
+      "cta_order": "Pedir Ahora"
     },
-    "ramen": {
-      "name": "Ramen Tonkotsu",
-      "desc": "Caldo de hueso de cerdo de 18h, chashu, huevo ajitama, nori",
-      "price": "75"
+    "about": {
+      "title": "Nuestra Historia",
+      "origin_title": "Nuestras Raíces",
+      "origin_text": "Nacido en Tamraght, Kinomori fusiona la precisión japonesa con el alma marroquí.",
+      "philosophy_title": "Nuestra Filosofía",
+      "philosophy_text": "Creemos en la comida lenta: ingredientes de temporada y técnicas tradicionales.",
+      "chef_title": "El Chef",
+      "chef_text": "15+ años de experiencia"
     },
-    "sushi": {
-      "name": "Selección de Sushi del Chef",
-      "desc": "10 piezas nigiri omakase — pescado de temporada",
-      "price": "120"
+    "reviews": {
+      "title": "Lo Que Dicen",
+      "more": "ver más reseñas"
     },
-    "teppanyaki": {
-      "name": "Set Teppanyaki",
-      "desc": "Verduras a la parrilla, marisco y wagyu sobre plancha de hierro",
-      "price": "180"
-    },
-    "dishes": {
-      "dimsum": {
-        "name": "Dim Sum Cantonés",
-        "desc": "Bollos al vapor, dumplings de cerdo y siu mai — hechos a mano cada mañana",
-        "price": "45"
-      },
-      "ramen": {
-        "name": "Ramen Tonkotsu",
-        "desc": "Caldo de hueso de cerdo de 18h, chashu, huevo ajitama, nori, cebolleta",
-        "price": "75"
-      },
-      "sushi": {
-        "name": "Omakase del Chef",
-        "desc": "10 piezas de selección estacional — pescado fresco llegado semanalmente",
-        "price": "120"
-      },
-      "teppanyaki": {
-        "name": "Set Teppanyaki Wagyu",
-        "desc": "Wagyu A5, verduras de temporada, arroz con ajo sobre plancha",
-        "price": "220"
-      },
-      "padthai": {
-        "name": "Pad Thai Fusión Marroquí",
-        "desc": "Fideos de arroz, gambas, tofu, salsa tamarindo — nuestra fusión insignia",
-        "price": "80"
-      },
-      "duck": {
-        "name": "Pato Pekinés en Tortita",
-        "desc": "Pato crujiente con cinco especias, salsa hoisin, pepino y cebolleta",
-        "price": "95"
-      },
-      "cocktails": {
-        "name": "Cóctel de Sake Mojito",
-        "desc": "Sake premium, menta fresca, lima y agua con gas",
-        "price": "55"
-      },
-      "dessert": {
-        "name": "Trio de Mochi Helado",
-        "desc": "Matcha, mango y sésamo negro — servido con té de osmanthus",
-        "price": "40"
-      }
-    },
-    "tag": {
-      "handmade": "Hecho a Mano",
-      "broth": "Caldo de 18h",
-      "seasonal": "Pescado Estacional",
-      "wagyu": "Wagyu A5",
-      "signature": "Nuestra Creación",
-      "crispy": "Piel Crujiente",
-      "premium": "Sake Premium",
-      "house": "Favorito de la Casa"
-    },
-    "banner": {
-      "title": "Reserva tu Mesa",
-      "subtitle": "Reserva ahora y vive la experiencia completa de Kinomori."
+    "contact": {
+      "sent": "¡Mensaje enviado!"
     }
   }
 }
