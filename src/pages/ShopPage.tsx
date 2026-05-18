@@ -53,15 +53,15 @@ export default function ShopPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((p,i) => (
             <motion.div key={p.id} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.07}}
-              className="rounded-2xl bg-gray-50 overflow-hidden hover:shadow-2xl hover:shadow-black/10 border border-transparent hover:border-kin-gold/20 group cursor-pointer transition-all duration-500">
-              <div className="aspect-square flex items-center justify-center text-8xl bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-kin-gold/10 group-hover:to-kin-gold/5 transition-all duration-500">{p.emoji}</div>
+              className="rounded-2xl bg-gray-50 overflow-hidden hover:shadow-2xl hover:shadow-black/10 border border-transparent hover:/20 group cursor-pointer transition-all duration-500" style={ borderColor:#f59e0b }>
+              <div className="aspect-square flex items-center justify-center text-8xl bg-gradient-to-br from-gray-100 to-gray-200 group-hover:/10 group-hover:/5 transition-all duration-500" style={ backgroundImage:"linear-gradient(to right,transparent,#f59e0b)" } style={ backgroundImage:"linear-gradient(to right,#f59e0b,transparent)" }>{p.emoji}</div>
               <div className="p-5 space-y-3">
                 <h3 className="font-semibold text-gray-900 text-lg">{p.name}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{p.desc}</p>
                 <div className="flex items-center justify-between pt-1">
-                  <span className="font-display font-bold text-kin-gold text-xl">{p.price}€</span>
+                  <span className="font-display font-bold text-xl" style={ color:#f59e0b }>{p.price}€</span>
                   <button onClick={()=>addToCart(p)}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-kin-gold text-kin-dark font-semibold text-sm hover:bg-amber-400 transition-all shadow-md hover:shadow-lg active:scale-95">
+                    className="flex items-center gap-2 px-4 py-2 rounded-full text-kin-dark font-semibold text-sm hover:bg-amber-400 transition-all shadow-md hover:shadow-lg active:scale-95" style={ backgroundColor:#f59e0b }>
                     <Plus size={15}/> Add
                   </button>
                 </div>
@@ -82,7 +82,7 @@ export default function ShopPage() {
           {!cart.length && <p className="text-gray-600 text-sm">Your cart is empty</p>}
           {cart.map((item,i)=>(
             <div key={i} className="flex justify-between items-center py-3 border-b border-white/6">
-              <div><p className="text-white text-sm font-medium">{item.name}</p><p className="text-kin-gold text-sm">{item.price}€ × {item.qty}</p></div>
+              <div><p className="text-white text-sm font-medium">{item.name}</p><p className="text-sm" style={ color:#f59e0b }>{item.price}€ × {item.qty}</p></div>
               <span className="text-white font-semibold">{item.price*item.qty}€</span>
             </div>
           ))}
@@ -90,7 +90,7 @@ export default function ShopPage() {
             <div className="mt-6 pt-4 border-t border-white/8">
               <div className="flex justify-between mb-4"><span className="text-gray-400">Total</span>
                 <span className="font-display font-bold text-white text-xl">{cart.reduce((s,i)=>s+i.price*i.qty,0)}€</span></div>
-              <button className="w-full py-3 rounded-full bg-kin-gold text-kin-dark font-bold hover:bg-amber-400 transition-all shadow-lg">
+              <button className="w-full py-3 rounded-full text-kin-dark font-bold hover:bg-amber-400 transition-all shadow-lg" style={ backgroundColor:#f59e0b }>
                 Checkout
               </button>
             </div>

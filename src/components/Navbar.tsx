@@ -21,7 +21,7 @@ export default function Navbar() {
     <motion.nav initial={{y:-20,opacity:0}} animate={{y:0,opacity:1}} transition={{duration:.4,ease:'easeOut'}}
       className="sticky top-0 z-50 backdrop-blur-xl bg-[#0a0a0a]/70 border-b border-white/8">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-white hover:text-kin-gold transition-colors">
+        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-white hover: transition-colors" style={ color:#f59e0b }>
           KINOMORI
         </Link>
 

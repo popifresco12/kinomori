@@ -18,8 +18,8 @@ export default function StoryPage() {
       <section className="min-h-[65vh] flex flex-col items-center justify-center text-center px-6 py-20"
         style={{ background:'linear-gradient(135deg,#0a0a0a 0%,#122212 50%,#0a0a0a 100%)' }}>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute w-[400px] h-[400px] rounded-full bg-kin-green/8 blur-[120px] top-1/4 left-1/4"/>
-          <div className="absolute w-[300px] h-[300px] rounded-full bg-kin-gold/8 blur-[100px] bottom-1/4 right-1/4"/>
+          <div className="absolute w-[400px] h-[400px] rounded-full /8 blur-[120px] top-1/4 left-1/4" style={ backgroundColor:#1a2e1a }/>
+          <div className="absolute w-[300px] h-[300px] rounded-full /8 blur-[100px] bottom-1/4 right-1/4" style={ backgroundColor:#f59e0b }/>
         </div>
         <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}
           className="font-display text-5xl md:text-7xl font-bold text-white tracking-wide relative z-10">
@@ -35,13 +35,13 @@ export default function StoryPage() {
       <section className="max-w-7xl mx-auto px-6 py-24 bg-white">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <motion.div initial={{opacity:0,x:-40}} whileInView={{opacity:1,x:0}} transition={{duration:.7}} viewport={{once:true}}
-            className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-kin-green to-kin-dark relative">
+            className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br to-kin-dark relative" style={ backgroundImage:"linear-gradient(to right,#1a2e1a,transparent)" }>
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-[8rem] opacity-20">🏔️</span>
             </div>
           </motion.div>
           <div className="space-y-5">
-            <span className="text-kin-gold text-sm font-semibold tracking-[0.2em] uppercase">Origin</span>
+            <span className="text-sm font-semibold tracking-[0.2em] uppercase" style={ color:#f59e0b }>Origin</span>
             <h2 className="font-display text-4xl font-bold text-gray-900">{t('about.origin_title')}</h2>
             <p className="text-gray-600 leading-relaxed text-lg">{t('about.origin_text')}</p>
           </div>
@@ -52,12 +52,12 @@ export default function StoryPage() {
       <section className="max-w-7xl mx-auto px-6 py-24 bg-gray-50">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="md:order-2 space-y-5">
-            <span className="text-kin-gold text-sm font-semibold tracking-[0.2em] uppercase">Philosophy</span>
+            <span className="text-sm font-semibold tracking-[0.2em] uppercase" style={ color:#f59e0b }>Philosophy</span>
             <h2 className="font-display text-4xl font-bold text-gray-900">{t('about.philosophy_title')}</h2>
             <p className="text-gray-600 leading-relaxed text-lg">{t('about.philosophy_text')}</p>
           </div>
           <motion.div initial={{opacity:0,x:40}} whileInView={{opacity:1,x:0}} transition={{duration:.7}} viewport={{once:true}}
-            className="md:order-1 rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-kin-gold/80 to-kin-gold/30 relative">
+            className="md:order-1 rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br /80 /30 relative" style={ backgroundImage:"linear-gradient(to right,transparent,#f59e0b)" } style={ backgroundImage:"linear-gradient(to right,#f59e0b,transparent)" }>
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-[8rem] opacity-20">🧭</span>
             </div>
@@ -78,7 +78,7 @@ export default function StoryPage() {
               </div>
               <p className="text-gray-700 leading-relaxed mb-4 italic">"{rv.text}"</p>
               <footer className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-kin-gold/20 flex items-center justify-center text-xs font-bold text-kin-gold">{rv.name[0]}</div>
+                <div className="w-8 h-8 rounded-full /20 flex items-center justify-center text-xs font-bold" style={ color:#f59e0b } style={ backgroundColor:#f59e0b }>{rv.name[0]}</div>
                 <span className="text-sm font-semibold text-gray-600">{rv.name}</span>
               </footer>
             </motion.blockquote>

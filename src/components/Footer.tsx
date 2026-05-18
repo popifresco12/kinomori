@@ -17,7 +17,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-3">
             {[Phone, MapPin, Mail].map((Icon,i) => (
-              <a key={i} href="#" className="w-9 h-9 rounded-full bg-white/[0.07] flex items-center justify-center text-gray-400 hover:text-kin-gold hover:bg-white/[0.11] transition-all">
+              <a key={i} href="#" className="w-9 h-9 rounded-full bg-white/[0.07] flex items-center justify-center text-gray-400 hover: hover:bg-white/[0.11] transition-all" style={ color:#f59e0b }>
                 <Icon size={15} />
               </a>
             ))}
@@ -29,7 +29,7 @@ export default function Footer() {
           <h4 className="font-semibold text-white mb-4 text-sm tracking-wider uppercase opacity-60">Explore</h4>
           <ul className="space-y-2.5 text-sm text-gray-500">
             {['/','/story','/menu','/shop','/contact'].map(to=>(
-              <li key={to}><Link to={to} className="hover:text-kin-gold transition-colors">{to==='/'?'Home':to.slice(1).replace(/^./,c=>c.toUpperCase())}</Link></li>
+              <li key={to}><Link to={to} className="hover: transition-colors" style={ color:#f59e0b }>{to==='/'?'Home':to.slice(1).replace(/^./,c=>c.toUpperCase())}</Link></li>
             ))}
           </ul>
         </div>
@@ -38,9 +38,9 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-white mb-4 text-sm tracking-wider uppercase opacity-60">Visit Us</h4>
           <ul className="space-y-3 text-sm text-gray-500">
-            <li className="flex gap-2.5"><MapPin size={14} className="mt-0.5 text-kin-gold"/>Tamraght, Morocco</li>
-            <li className="flex gap-2.5"><Phone size={14} className="mt-0.5 text-kin-gold"/>+212 528 000 000</li>
-            <li className="flex gap-2.5"><Mail size={14} className="mt-0.5 text-kin-gold"/>hola@kinomori.ma</li>
+            <li className="flex gap-2.5"><MapPin size={14} className="mt-0.5" style={ color:#f59e0b }/>Tamraght, Morocco</li>
+            <li className="flex gap-2.5"><Phone size={14} className="mt-0.5" style={ color:#f59e0b }/>+212 528 000 000</li>
+            <li className="flex gap-2.5"><Mail size={14} className="mt-0.5" style={ color:#f59e0b }/>hola@kinomori.ma</li>
           </ul>
         </div>
 
@@ -50,7 +50,7 @@ export default function Footer() {
           <ul className="space-y-2.5 text-sm text-gray-500">
             <li className="flex justify-between"><span>Mon–Thu</span><span className="text-white/70">12:00 – 23:00</span></li>
             <li className="flex justify-between"><span>Fri–Sat</span><span className="text-white/70">12:00 – 01:00</span></li>
-            <li className="flex justify-between"><span>Sunday</span><span className="text-kin-gold">Closed</span></li>
+            <li className="flex justify-between"><span>Sunday</span><span style={ color:#f59e0b }>Closed</span></li>
           </ul>
         </div>
       </div>
