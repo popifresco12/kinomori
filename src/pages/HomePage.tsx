@@ -345,7 +345,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35, ease: [0.23, 1, 0.32, 1] }}
-              className="mt-6 text-[clamp(1rem,2vw,1.5rem)] font-light text-white/60 tracking-wide max-w-2xl mx-auto"
+              className="mt-6 text-[clamp(1rem,2vw,1.5rem)] font-light text-white/85 tracking-wide max-w-2xl mx-auto"
             >
               {t('tagline')}
             </motion.p>
