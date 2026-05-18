@@ -3,88 +3,88 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import MetaTags from '@/seo/MetaTags';
 
-export default function Story() {
-  const { t } = useTranslation();
-  const timeline = ['year_2021','year_2022','year_2023','year_2024'];
-  const values = [
-    { key:'val_fresh',     emoji:'🌿', color:'from-green-400 to-emerald-600' },
-    { key:'val_respect',   emoji:'🤝', color:'from-amber-400 to-orange-500' },
-    { key:'val_community', emoji:'🏘️', color:'from-blue-400 to-indigo-500' },
-    { key:'val_sustainability', emoji:'♻️', color:'from-teal-400 to-cyan-600' },
-  ];
-  return (
-    <div className="grain min-h-screen transition-colors bg-white bg-white">
-      <MetaTags titleKey="story.page_title" descriptionKey="about.origin_text" />
+const reviews = [
+  { name:"Sofia M.", text:"El mejor sushi fuera de Japón.", rating:5 },
+  { name:"Lucas R.", text:"Dim sum artesanal, precios razonables.", rating:5 },
+  { name:"Julia T.", text:"Lugar icónico en Tamraght.", rating:4 },
+];
 
-      {/* ── Origin ── */}
-      <section className="max-w-3xl mx-auto px-6 pt-24 pb-16 text-center">
-        <motion.h1 initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.5}}
-          className="font-display text-5xl font-bold mb-6 text-gray-900 text-gray-900">
-          {t('story.page_title')}
+export default function StoryPage() {
+  const { t } = useTranslation();
+  return (
+    <main>
+      <MetaTags/>
+      {/* HERO */}
+      <section className="min-h-[65vh] flex flex-col items-center justify-center text-center px-6 py-20"
+        style={{ background:'linear-gradient(135deg,#0a0a0a 0%,#122212 50%,#0a0a0a 100%)' }}>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute w-[400px] h-[400px] rounded-full bg-kin-green/8 blur-[120px] top-1/4 left-1/4"/>
+          <div className="absolute w-[300px] h-[300px] rounded-full bg-kin-gold/8 blur-[100px] bottom-1/4 right-1/4"/>
+        </div>
+        <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}
+          className="font-display text-5xl md:text-7xl font-bold text-white tracking-wide relative z-10">
+          {t('about.title')}
         </motion.h1>
-        <motion.p initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.5,delay:.15}}
-          className="text-xl text-gray-600 text-gray-600 leading-relaxed max-w-2xl mx-auto">
-          {t('about.origin_text')}
+        <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.3,duration:1}}
+          className="mt-5 text-lg text-gray-400 max-w-2xl relative z-10 leading-relaxed">
+          Kinomori nace de la fusión entre la precisión japonesa y la calidez marroquí.
         </motion.p>
       </section>
 
-      {/* ── Philosophy / Chef side-by-side ── */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
-        <div className="grid md:grid-cols-2 gap-10">
-          <motion.div whileHover={{translateY:-4}} className="p-10 rounded-3xl bg-gradient-to-b from-amber-50 to-orange-50 bg-white  border border-amber-100 border-gray-200">
-            <span className="text-4xl block mb-4">🧭</span>
-            <h2 className="font-display text-2xl font-bold mb-3 text-gray-900 text-gray-900">{t('about.philosophy_title')}</h2>
-            <p className="text-gray-600 text-gray-600 leading-relaxed">{t('about.philosophy_text')}</p>
+      {/* ORIGIN */}
+      <section className="max-w-7xl mx-auto px-6 py-24 bg-white">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <motion.div initial={{opacity:0,x:-40}} whileInView={{opacity:1,x:0}} transition={{duration:.7}} viewport={{once:true}}
+            className="rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-kin-green to-kin-dark relative">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-[8rem] opacity-20">🏔️</span>
+            </div>
           </motion.div>
-          <motion.div whileHover={{translateY:-4}} className="p-10 rounded-3xl bg-gradient-to-b from-slate-50 to-gray-50 bg-white bg-white border border-gray-100 border-gray-200">
-            <span className="text-4xl block mb-4">👨‍🍳</span>
-            <h2 className="font-display text-2xl font-bold mb-3 text-gray-900 text-gray-900">{t('about.chef_title')}</h2>
-            <p className="font-semibold text-kin-gold mb-2">{t('about.chef_name')}</p>
-            <p className="text-gray-600 text-gray-600 italic">"</p>
-            <p className="text-gray-600 text-gray-600 leading-relaxed">{t('about.chef_quote')}</p>
-            <p className="text-gray-600 text-gray-600 italic">"</p>
+          <div className="space-y-5">
+            <span className="text-kin-gold text-sm font-semibold tracking-[0.2em] uppercase">Origin</span>
+            <h2 className="font-display text-4xl font-bold text-gray-900">{t('about.origin_title')}</h2>
+            <p className="text-gray-600 leading-relaxed text-lg">{t('about.origin_text')}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* PHILOSOPHY */}
+      <section className="max-w-7xl mx-auto px-6 py-24 bg-gray-50">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="md:order-2 space-y-5">
+            <span className="text-kin-gold text-sm font-semibold tracking-[0.2em] uppercase">Philosophy</span>
+            <h2 className="font-display text-4xl font-bold text-gray-900">{t('about.philosophy_title')}</h2>
+            <p className="text-gray-600 leading-relaxed text-lg">{t('about.philosophy_text')}</p>
+          </div>
+          <motion.div initial={{opacity:0,x:40}} whileInView={{opacity:1,x:0}} transition={{duration:.7}} viewport={{once:true}}
+            className="md:order-1 rounded-3xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-kin-gold/80 to-kin-gold/30 relative">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-[8rem] opacity-20">🧭</span>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Timeline ── */}
-      <section className="max-w-3xl mx-auto px-6 pb-20">
-        <motion.h2 initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}}
-          className="font-display text-3xl font-bold text-center mb-14 text-gray-900 text-gray-900">
-          {t('about.timeline_title')}
-        </motion.h2>
-        <div className="relative">
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-kin-gold/40 via-kin-gold/20 to-transparent"/>
-          {timeline.map((ev, i) => (
-            <motion.div
-              key={ev}
-              initial={{opacity:0,x:-20}}
-              whileInView={{opacity:1,x:0}}
-              viewport={{once:true}}
-              transition={{delay:i*0.12}}
-              className="relative pl-20 pb-12 last:pb-0"
-            >
-              <div className="absolute left-5 w-6 h-6 rounded-full bg-kin-gold ring-4 ring-white ring-white shadow-lg"/>
-              <h3 className="font-display text-xl font-bold text-gray-900 text-gray-900">{t('about.' + ev)}</h3>
-            </motion.div>
+      {/* REVIEWS */}
+      <section className="max-w-7xl mx-auto px-6 py-24 bg-white">
+        <h2 className="font-display text-4xl font-bold text-center mb-4 text-gray-900">{t('reviews.title')}</h2>
+        <p className="text-center text-gray-500 mb-14">⭐⭐⭐⭐⭐ {t('reviews.more')}</p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {reviews.map((rv,i) => (
+            <motion.blockquote key={i} whileHover={{scale:1.03}}
+              className="p-8 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+              <div className="flex gap-1 mb-4">
+                {[1,2,3,4,5].map(n=><span key={n} className={"text-lg "+(n<=rv.rating?"text-yellow-400":"text-gray-200")}>★</span>)}
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-4 italic">"{rv.text}"</p>
+              <footer className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-kin-gold/20 flex items-center justify-center text-xs font-bold text-kin-gold">{rv.name[0]}</div>
+                <span className="text-sm font-semibold text-gray-600">{rv.name}</span>
+              </footer>
+            </motion.blockquote>
           ))}
         </div>
       </section>
-
-      {/* ── Values ── */}
-      <section className="max-w-6xl mx-auto px-6 pb-24">
-        <h2 className="font-display text-3xl font-bold text-center mb-14 text-gray-900 text-gray-900">{t('about.values_title')}</h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((v, i) => (
-            <motion.div key={v.key} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.1}}
-              whileHover={{scale:1.05, y:-4}}
-              className="p-8 rounded-3xl bg-white bg-white border border-gray-100 border-gray-200 shadow-sm hover:shadow-xl transition-all text-center">
-              <span className={`text-5xl block mb-4 bg-gradient-to-br ${v.color} bg-clip-text text-transparent`}>{v.emoji}</span>
-              <p className="font-display text-lg font-bold text-gray-900 text-gray-900">{t('about.'+v.key)}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-    </div>
+    </main>
   );
 }

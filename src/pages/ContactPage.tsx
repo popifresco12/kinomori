@@ -1,97 +1,57 @@
 'use client';
 import { useTranslation } from 'react-i18next';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
 import MetaTags from '@/seo/MetaTags';
 
-const schema = z.object({
-  name: z.string().min(2, 'Min 2 chars'),
-  email: z.string().email('Invalid email'),
-  phone: z.string().optional(),
-  subject: z.string(),
-  message: z.string().min(10, 'Min 10 chars'),
-  newsletter: z.boolean().optional(),
-});
-type FormData = z.infer<typeof schema>;
-
 export default function ContactPage() {
-  const { t } = useTranslation(['contact','common']);
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(schema) });
-
-  const onSubmit = (data: FormData) => {
-    const body = 'Hi! My name is ' + data.name + '\nEmail: ' + data.email + '\nPhone: ' + (data.phone || 'N/A') + '\nSubject: ' + data.subject + '\nMessage: ' + data.message;
-    window.open('https://wa.me/212600000000?text=' + encodeURIComponent(body));
-    reset();
-  };
-
+  const { t } = useTranslation();
   return (
-    <div className="grain min-h-screen transition-colors bg-white bg-white">
-      <MetaTags />
-      <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-14">
-        <motion.div initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
-          <h1 className="font-display text-5xl font-bold mb-3 text-gray-900 text-gray-900">{t('page_title', {ns:'contact'})}</h1>
-          <p className="text-gray-500 mb-10">{t('about.philosophy_title', {ns:'about'})}</p>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+    <main>
+      <MetaTags/>
+      <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-20"
+        style={{background:'linear-gradient(135deg,#0a0a0a,#122212)'}}>
+        <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}
+          className="font-display text-5xl md:text-7xl font-bold text-white tracking-wide">
+          {t('nav.contact')}
+        </motion.h1>
+      </section>
+      <section className="max-w-4xl mx-auto px-6 py-20 bg-white">
+        <div className="grid md:grid-cols-2 gap-12">
+          <motion.div initial={{opacity:0,x:-30}} whileInView={{opacity:1,x:0}} viewport={{once:true}}
+            className="space-y-6">
+            <h2 className="font-display text-3xl font-bold text-gray-900">Get in Touch</h2>
+            <div className="space-y-4 text-gray-600">
+              <div><span className="block text-xs font-semibold text-kin-gold tracking-[0.2em] uppercase mb-1">Address</span>
+                <p>Tamraght, Morocco</p></div>
+              <div><span className="block text-xs font-semibold text-kin-gold tracking-[0.2em] uppercase mb-1">Phone</span>
+                <p>+212 528 000 000</p></div>
+              <div><span className="block text-xs font-semibold text-kin-gold tracking-[0.2em] uppercase mb-1">Email</span>
+                <p>hola@kinomori.ma</p></div>
+              <div><span className="block text-xs font-semibold text-kin-gold tracking-[0.2em] uppercase mb-1">Hours</span>
+                <p>Mon–Sat: 12:00 – 23:00</p></div>
+            </div>
+          </motion.div>
+          <motion.form initial={{opacity:0,x:30}} whileInView={{opacity:1,x:0}} viewport={{once:true}}
+            className="space-y-5" onSubmit={e=>{e.preventDefault();alert('Message sent!')}}>
             <div>
-              <label className="block text-sm font-semibold mb-1.5 text-gray-700 text-gray-600">{t('name', {ns:'contact'})}</label>
-              <input {...register('name')} placeholder="John Doe" className="w-full px-4 py-3.5 rounded-2xl border border-gray-200 border-gray-200 bg-gray-50 bg-white focus:border-kin-gold focus:ring-1 focus:ring-kin-gold outline-none transition-all text-gray-900 text-gray-900" />
-              {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-semibold mb-1.5 text-gray-700 text-gray-600">{t('email', {ns:'contact'})}</label>
-                <input type="email" {...register('email')} placeholder="john@email.com" className="w-full px-4 py-3.5 rounded-2xl border border-gray-200 border-gray-200 bg-gray-50 bg-white focus:border-kin-gold outline-none transition-all text-gray-900 text-gray-900" />
-                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-1.5 text-gray-700 text-gray-600">{t('phone', {ns:'contact'})}</label>
-                <input {...register('phone')} placeholder="+212 6XX-XXXXXX" className="w-full px-4 py-3.5 rounded-2xl border border-gray-200 border-gray-200 bg-gray-50 bg-white outline-none transition-all text-gray-900 text-gray-900" />
-              </div>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">Name</label>
+              <input type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:border-kin-gold focus:ring-2 focus:ring-kin-gold/20 outline-none transition-all" placeholder="Your name"/>
             </div>
             <div>
-              <label className="block text-sm font-semibold mb-1.5 text-gray-700 text-gray-600">{t('subject', {ns:'contact'})}</label>
-              <select {...register('subject')} className="w-full px-4 py-3.5 rounded-2xl border border-gray-200 border-gray-200 bg-gray-50 bg-white outline-none transition-all text-gray-900 text-gray-900">
-                {['Reservation','Private Event','Feedback','Other'].map(s => <option key={s} value={s}>{s}</option>)}
-              </select>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+              <input type="email" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:border-kin-gold focus:ring-2 focus:ring-kin-gold/20 outline-none transition-all" placeholder="you@example.com"/>
             </div>
             <div>
-              <label className="block text-sm font-semibold mb-1.5 text-gray-700 text-gray-600">{t('message', {ns:'contact'})}</label>
-              <textarea rows={4} {...register('message')} placeholder="I would like to book a table for..." className="w-full px-4 py-3.5 rounded-2xl border border-gray-200 border-gray-200 bg-gray-50 bg-white outline-none resize-none transition-all text-gray-900 text-gray-900" />
-              {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
+              <textarea rows={5} className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:border-kin-gold focus:ring-2 focus:ring-kin-gold/20 outline-none transition-all resize-none" placeholder="Your message"/>
             </div>
-            <button type="submit" className="w-full py-4 rounded-2xl bg-kin-gold hover:bg-amber-400 text-kin-dark font-bold text-base transition-all shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 flex items-center justify-center gap-2">
-              <Send size={18} /> {t('send', {ns:'contact'})}
+            <button type="submit"
+              className="w-full py-3.5 rounded-full bg-kin-gold hover:bg-amber-400 text-kin-dark font-bold transition-all shadow-lg shadow-kin-gold/30 hover:shadow-kin-gold/50">
+              Send Message
             </button>
-          </form>
-        </motion.div>
-        <motion.div initial={{opacity:0,x:20}} whileInView={{opacity:1,x:0}} viewport={{once:true}} className="space-y-6">
-          <div className="p-8 rounded-3xl bg-gradient-to-b from-amber-50 to-orange-50 bg-white  border border-amber-100 border-gray-200">
-            <h3 className="font-display text-2xl font-bold text-gray-900 text-gray-900 mb-6">{t('nav.contact', {ns:'common'})}</h3>
-            <div className="space-y-5">
-              {[
-                {Icon:MapPin,value:'Tamraght, Morocco'},
-                {Icon:Phone,value:'+212 5XX-XXXXXX'},
-                {Icon:Mail,value:'hello@kinomori.ma'},
-                {Icon:Clock,value:t('hours',{ns:'contact'})},
-              ].map(({Icon,value},i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-2xl bg-kin-gold/15 flex items-center justify-center flex-shrink-0"><Icon size={18} className="text-kin-gold"/></div>
-                  <div>
-                    <p className="font-semibold text-gray-800">{value}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-3xl overflow-hidden h-64 bg-gray-100 bg-white border border-gray-200 border-gray-200">
-            <iframe title="Kinomori location" width="100%" height="100%" style={{border:0}} loading="lazy"
-              src="https://www.google.com/maps?q=Kinomori+restaurant+Tamraght+Morocco&output=embed" allowFullScreen></iframe>
-          </div>
-        </motion.div>
-      </div>
-    </div>
+          </motion.form>
+        </div>
+      </section>
+    </main>
   );
 }

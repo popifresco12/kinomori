@@ -1,106 +1,62 @@
 'use client';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Star, Clock, Flame } from 'lucide-react';
 import MetaTags from '@/seo/MetaTags';
 
-const EMOJI: Record<string,string> = {
-  dimsum:'🥟', ramen:'🍜', sushi:'🍣', teppanyaki:'🥩',
-  padthai:'🍝', duck:'🦆', cocktails:'🍸', dessert:'🍡',
-};
-const TAG_ICON: Record<string,typeof Star|null> = {
-  dimsum: Clock, ramen: Clock, sushi: Star, teppanyaki: Flame,
-  padthai: Flame, duck: Star, cocktails: Star, dessert: Star,
-};
-const TAG_KEY: Record<string,string> = {
-  dimsum:'handmade', ramen:'broth', sushi:'seasonal', teppanyaki:'wagyu',
-  padthai:'signature', duck:'crispy', cocktails:'premium', dessert:'house',
-};
+const categories = [
+  { key:'sushi', emoji:'🍣', label_en:'Sushi', label_es:'Sushi' },
+  { key:'ramen', emoji:'🍜', label_en:'Ramen', label_es:'Ramen' },
+  { key:'dimsum', emoji:'🥟', label_en:'Dim Sum', label_es:'Dim Sum' },
+];
+const items = [
+  {cat:'sushi',name:'Dragon Roll',desc:'Eel, avocado, spicy mayo',price:'18'},
+  {cat:'sushi',name:'Salmon Nigiri (8 pcs)',desc:'Fresh Norwegian salmon',price:'22'},
+  {cat:'ramen',name:'Tonkotsu Ramen',desc:'Pork bone broth, chashu, egg',price:'16'},
+  {cat:'ramen',name:'Spicy Miso Ramen',desc:'Miso, chili oil, corn',price:'15'},
+  {cat:'dimsum',name:'Pork Xiao Long Bao (8)',desc:'Soup dumplings',price:'14'},
+  {cat:'dimsum',name:'Har Gow (6)',desc:'Shrimp dumplings',price:'13'},
+];
 
 export default function MenuPage() {
-  const { t } = useTranslation();
-  const dishes = (t('menu.dishes', { returnObjects: true }) as Record<string,{name:string;desc:string;price:string}>) || {};
-  const keys = Object.keys(dishes);
-
+  const { t, i18n } = useTranslation();
+  const lng = i18n.language?.startsWith('es') ? 'es' : i18n.language?.startsWith('fr') ? 'fr' : 'en';
   return (
-    <div className="grain min-h-screen transition-colors bg-white bg-white pb-20">
-      <MetaTags titleKey="menu.page_title" descriptionKey="about.origin_text" />
-
-      {/* ── Hero ── */}
-      <section className="relative py-20 px-6 text-center overflow-hidden"
-        style={{background:'linear-gradient(135deg,#1a2e1a 0%,#0a0a0a 50%,#1a2e1a 100%)'}}>
-        <div className="absolute inset-0 pointer-events-none">
-          {['#f59e0b','#ef4444','#10b981','#8b5cf6'].map((c,i)=>(
-            <div key={i} className="absolute rounded-full animate-pulse"
-              style={{top:`${10+i*20}%`,left:`${5+i*15}%`,width:`${10+i*6}px`,height:`${10+i*6}px`,background:c,opacity:.1+i*.06,filter:'blur(12px)',animationDuration:`${3+i*2}s`}}
-            />
-          ))}
-        </div>
-        <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.6}}
-          className="font-display text-5xl md:text-7xl font-bold text-white tracking-wider relative z-10">
-          {t('menu.page_title')}
+    <main>
+      <MetaTags/>
+      <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-20"
+        style={{background:'linear-gradient(135deg,#0a0a0a,#122212)'}}>
+        <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}
+          className="font-display text-5xl md:text-7xl font-bold text-white tracking-wide">
+          Menu
         </motion.h1>
-        <motion.p initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.6,delay:.15}}
-          className="mt-4 text-xl text-amber-300/80 font-light relative z-10">
-          Asia meets Morocco · 亚洲遇见摩洛哥
+        <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.3}}
+          className="mt-5 text-lg text-gray-400 max-w-xl">
+          Momiji · Sushi · Ramen · Dim Sum
         </motion.p>
       </section>
-
-      {/* ── Dishes grid ── */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 gap-8">
-          {keys.map((key, i) => {
-            const d = dishes[key];
-            const Icon = TAG_ICON[key] || Star;
-            return (
-              <motion.article
-                key={key}
-                initial={{opacity:0, y:30}}
-                whileInView={{opacity:1, y:0}}
-                viewport={{once:true, margin:'-50px'}}
-                transition={{delay:i*0.07, duration:.5}}
-                whileHover={{y:-4}}
-                className="group relative rounded-3xl overflow-hidden border border-gray-100 border-gray-200 shadow-sm hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 bg-white bg-white"
-              >
-                <div className="h-32 flex items-end justify-center pb-0 text-[5rem] leading-none bg-gradient-to-t from-amber-50 to-transparent bg-white group-hover:scale-110 transition-transform duration-500">
-                  {EMOJI[key] || '🍽️'}
-                </div>
-
-                <div className="p-6 pt-2 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-display text-xl font-bold text-gray-900 text-gray-900">{d.name}</h3>
-                    <span className="text-2xl font-black text-kin-gold">{d.price} {t('common.mad')}</span>
+      <section className="max-w-6xl mx-auto px-6 py-20 bg-white">
+        {categories.map(cat=>(
+          <div key={cat.key} className="mb-16">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-4xl">{cat.emoji}</span>
+              <h2 className="font-display text-3xl font-bold text-gray-900">{cat.label_en}</h2>
+              <div className="flex-1 h-px bg-gray-200"/>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {items.filter(i=>i.cat===cat.key).map((item,i)=>(
+                <motion.div key={i} initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}}
+                  className="flex justify-between items-start p-5 rounded-2xl bg-gray-50 hover:bg-kin-gold/8 border border-transparent hover:border-kin-gold/20 transition-all group cursor-pointer">
+                  <div>
+                    <h3 className="font-semibold text-gray-900 group-hover:text-kin-dark transition-colors">{item.name}</h3>
+                    <p className="text-sm text-gray-500 mt-1">{item.desc}</p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Icon size={14} className="text-amber-500"/>
-                    <span className="text-xs text-amber-700 text-amber-600 font-medium uppercase tracking-wider">
-                      {t('menu.tag.' + TAG_KEY[key])}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 text-gray-500 text-sm leading-relaxed">{d.desc}</p>
-                  <button className="mt-2 w-full py-2.5 rounded-xl border-2 border-kin-gold/30 text-kin-gold hover:bg-kin-gold hover:text-kin-dark font-semibold text-sm transition-all">
-                    {t('common.add_to_cart')}
-                  </button>
-                </div>
-              </motion.article>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ── Promo banner ── */}
-      <section className="max-w-6xl mx-auto px-6 pb-10">
-        <motion.div initial={{opacity:0,scale:.97}} whileInView={{opacity:1,scale:1}} viewport={{once:true}}
-          className="rounded-3xl bg-gradient-to-r from-kin-dark to-slate-900 p-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <h2 className="font-display text-3xl font-bold text-white">{t('menu.banner.title')}</h2>
-            <p className="text-gray-400 mt-2">{t('menu.banner.subtitle')}</p>
+                  <span className="font-display font-bold text-kin-gold text-lg ml-4">{item.price}€</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
-          <button className="px-8 py-4 rounded-full bg-kin-gold hover:bg-amber-400 text-kin-dark font-bold shadow-lg shadow-amber-500/30 transition-all whitespace-nowrap">
-            {t('nav.contact')}
-          </button>
-        </motion.div>
+        ))}
       </section>
-    </div>
+    </main>
   );
 }
