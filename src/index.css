@@ -10,12 +10,18 @@
 }
 
 /* ── Base ─────────────────────────────────────────── */
-html { scroll-behavior: smooth; }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
 body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background: #0a0a0a;
 }
 
 /* ── Liquid Glass ─────────────────────────────────── */
@@ -51,10 +57,11 @@ body {
 }
 
 /* ── Scrollbar ────────────────────────────────────── */
+html { scrollbar-width: thin; scrollbar-color: #333 transparent; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(245, 158, 11, 0.3); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(245, 158, 11, 0.5); }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
 
 /* ── Selection ────────────────────────────────────── */
 ::selection { background: rgba(245, 158, 11, 0.25); color: inherit; }

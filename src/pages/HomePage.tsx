@@ -199,27 +199,24 @@ function LiquidButton({
     'relative px-8 py-4 rounded-full font-bold text-base transition-all duration-500 overflow-hidden group cursor-pointer';
   const variants: Record<string, string> = {
     primary:
-      'text-kin-dark shadow-[0_8px_32px_rgba(245,158,11,.35)] hover:shadow-[0_12px_48px_rgba(245,158,11,.55)]',
+      'bg-kin-gold text-kin-dark shadow-[0_8px_32px_rgba(245,158,11,.35)] hover:bg-amber-400 hover:shadow-[0_12px_48px_rgba(245,158,11,.55)]',
     secondary:
-      'text-white border border-white/20 hover:border-white/50 backdrop-blur-md',
+      'bg-white/8 text-white border border-white/15 hover:bg-white/15 hover:border-white/35 backdrop-blur-md',
     ghost: 'text-white/70 hover:text-white',
   };
 
   return (
     <button onClick={onClick} className={`${base} ${variants[variant]} ${className}`}>
-      {/* Animated gradient border */}
-      <span
-        className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-        style={{
-          background:
-            variant === 'primary'
-              ? 'radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(245,158,11,.25), transparent 60%)'
-              : 'radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.08), transparent 60%)',
-          transition: 'opacity .5s cubic-bezier(0.23,1,0.32,1)',
-        }}
-      />
-      {/* Animated gradient overlay */}
-      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-kin-gold/20 via-kin-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+      {/* Animated gradient hover glow */}
+      {variant === 'secondary' && (
+        <span
+          className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          style={{
+            background: 'radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.08), transparent 60%)',
+            transition: 'opacity .5s cubic-bezier(0.23,1,0.32,1)',
+          }}
+        />
+      )}
       <span className="relative z-10 flex items-center gap-2">{children}</span>
     </button>
   );
@@ -319,7 +316,7 @@ export default function Home() {
 
         {/* Content Overlay */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
-          <div className="pointer-events-auto max-w-5xl">
+          <div className="pointer-events-auto max-w-7xl mx-auto w-full">
 
             {/* Badge */}
             <motion.div
