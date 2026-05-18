@@ -43,7 +43,7 @@ export default function Footer() {
         {/* Barra inferior */}
         <div className="border-t border-white/10 pt-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-500">
           <span>© {new Date().getFullYear()} Kinomori. All rights reserved.</span>
-          <a href="https://kinomori.ma/sitemap.xml" className="hover:text-kin-gold transition-colors">sitemap.xml</a>
+          <a href="https://popifresco12.github.io/kinomori/sitemap.xml" className="hover:text-kin-gold transition-colors">sitemap.xml</a>
         </div>
       </div>
     </footer>
