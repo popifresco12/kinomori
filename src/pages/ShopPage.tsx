@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import MetaTags from '@/seo/MetaTags';
 import { motion } from 'framer-motion';
 import { PRODUCTS, CATEGORIES, Product } from '@/data/products';
 import { useCartStore } from '@/store/cartStore';
@@ -20,7 +21,8 @@ export default function Shop() {
     : {cls:'bg-green-100 text-green-700',label:t('shop.in_stock')};
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-14">
+    <MetaTags titleKey="shop.page_title" descriptionKey="hero.tagline"/>
+      <div className="max-w-7xl mx-auto px-6 py-14">
       <h1 className="font-display text-5xl font-bold mb-10 text-center">{t('shop.page_title')}</h1>
 
       <div className="flex flex-wrap gap-3 justify-center mb-10">

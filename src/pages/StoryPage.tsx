@@ -1,6 +1,7 @@
 'use client';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import MetaTags from '@/seo/MetaTags';
 
 export default function Story() {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ export default function Story() {
     { key: 'val_sustainability', emoji: '♻️' },
   ];
   return (
-    <div className="grain" style={{background:'#faf7f2'}}>
+    <div className="grain style={{background:'#faf7f2'}}>
       <section className="max-w-3xl mx-auto px-6 py-20">
         <h1 className="font-display text-5xl font-bold mb-8 text-center">{t('story.page_title')}</h1>
 

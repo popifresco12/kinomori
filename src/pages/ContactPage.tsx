@@ -1,5 +1,6 @@
 'use client';
 import { useTranslation } from 'react-i18next';
+import MetaTags from '@/seo/MetaTags';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -26,6 +27,7 @@ export default function ContactPage() {
   };
 
   return (
+      <MetaTags titleKey="contact.page_title" descriptionKey="about.origin_text"/>
     <div className="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-12">
       <motion.div initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
         <h1 className="font-display text-5xl font-bold mb-8">{t('page_title')}</h1>

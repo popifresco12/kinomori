@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ShoppingBag } from 'lucide-react';
 import CartDrawer from './CartDrawer';
+import DarkToggle from './DarkToggle';
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -33,6 +34,7 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
+        <DarkToggle />
         <CartDrawer />
       </div>
     </motion.nav>
