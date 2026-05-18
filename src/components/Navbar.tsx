@@ -20,7 +20,7 @@ export default function Navbar() {
   ];
   return (
     <motion.nav initial={{y:-20,opacity:0}} animate={{y:0,opacity:1}} transition={{duration:.4,ease:'easeOut'}}
-      className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 backdrop-blur-xl border-b border-white/8 transition-colors">
+      className="sticky top-0 z-50 backdrop-blur-xl bg-[#0a0a0a]/70 backdrop-blur-xl border-b border-white/8 transition-colors">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="font-display text-2xl font-bold tracking-tight text-white hover:text-kin-gold transition-colors">
