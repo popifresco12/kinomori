@@ -20,10 +20,10 @@ export default function Navbar() {
   ];
   return (
     <motion.nav initial={{y:-20,opacity:0}} animate={{y:0,opacity:1}} transition={{duration:.4,ease:'easeOut'}}
-      className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 bg-white/80 border-b border-gray-100 border-gray-200 transition-colors">
+      className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 backdrop-blur-xl border-b border-white/8 transition-colors">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-gray-900 text-gray-900 hover:text-kin-gold transition-colors">
+        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-white hover:text-kin-gold transition-colors">
           KINOMORI
         </Link>
 
@@ -32,7 +32,7 @@ export default function Navbar() {
           {links.map(l => (
             <Link key={l.to} to={l.to}
               className={`px-3 py-2 rounded-xl text-sm font-medium transition-all ${
-                loc.pathname===l.to ? 'bg-kin-gold/15 text-kin-gold' : 'text-gray-600 text-gray-600 hover:bg-gray-100 hover:bg-gray-100'
+                loc.pathname===l.to ? 'bg-kin-gold/15 text-kin-gold' : 'text-gray-400 text-gray-400 hover:bg-white/8'
               }`}>
               {t('nav.' + l.key)}
             </Link>
