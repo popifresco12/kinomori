@@ -15,7 +15,7 @@ export default function CartDrawer() {
 
   return (
     <Drawer>
-      <DrawerTrigger asChild>
+      <DrawerTrigger>
         <button className="relative flex items-center gap-2 px-4 py-2 rounded-full bg-kin-gold/90 hover:bg-kin-gold text-kin-dark font-semibold text-sm transition-all hover:scale-105">
           <ShoppingBag size={17} />
           {t('nav.cart')}
@@ -54,7 +54,7 @@ export default function CartDrawer() {
                 className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-base transition-all shadow-lg hover:shadow-xl">
                 <MessageCircle size={20}/> {t('shop.checkout_whatsapp')}
               </a>
-              <DrawerClose asChild><button onClick={clear} className="w-full py-2 rounded-xl border border-gray-300 text-gray-600 hover:bg-gray-100 text-sm">{t('common.empty_cart')}</button></DrawerClose>
+              <DrawerClose><button onClick={clear} className="w-full py-2 rounded-xl border border-gray-300 text-gray-600 hover:bg-gray-100 text-sm">{t('common.empty_cart')}</button></DrawerClose>
             </div>
           )}
         </div>

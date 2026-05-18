@@ -13,12 +13,14 @@ const API_KEY  = '';
 export default function Home() {
   const { t } = useTranslation('hero');
   const navigate = useNavigate();
-  const { data: place, loading } = useReviews(PLACE_ID, API_KEY);
+  const { data, loading }: any = useReviews(PLACE_ID, API_KEY);
+  const place: any = data;
   const reviews = (place?.reviews || []).slice(0, 3);
 
   return (
-    <div className="grain min-h-screen transition-colors bg-white dark:bg-slate-950">
-      <MetaTags />
+    <>
+      {<MetaTags />}
+      <div className="grain min-h-screen transition-colors bg-white dark:bg-slate-950">
 
       {/* ── HERO ── */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden"
@@ -102,7 +104,7 @@ export default function Home() {
             </div>
           ) : reviews.length > 0 ? (
             <div className="grid md:grid-cols-3 gap-8">
-              {reviews.map((rv,i)=>(
+              {reviews.map((rv:any,i:any)=>(
                 <motion.blockquote key={i} whileHover={{scale:1.03}}
                   className="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all">
                   <div className="flex gap-1 mb-4">
@@ -125,5 +127,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }

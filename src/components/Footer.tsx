@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { MapPin, Phone, Mail, Instagram, Facebook, Globe, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Camera, MessageCircle, Globe, Clock } from 'lucide-react';
 import DarkToggle from './DarkToggle';
 import { motion } from 'framer-motion';
 
@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Social + Dark Toggle */}
           <motion.div initial={{opacity:0,y:10}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:.2}} className="flex flex-col items-start md:items-end gap-5">
             <div className="flex gap-3">
-              {[Instagram,Facebook,Globe].map((Icon,i)=>(
+              {[Camera,MessageCircle,Globe].map((Icon,i)=>(
                 <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-kin-gold/20 hover:border-kin-gold/40 transition-colors">
                   <Icon size={18} className="text-gray-400 group-hover:text-white"/>
                 </a>
