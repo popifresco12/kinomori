@@ -16,7 +16,7 @@ export default function Footer() {
             Asia meets Morocco in every bite — Tamraght, Morocco
           </p>
           <div className="flex gap-3">
-            {[Instagram, Facebook, Phone].map((Icon,i) => (
+            {[Phone, MapPin, Mail].map((Icon,i) => (
               <a key={i} href="#" className="w-9 h-9 rounded-full bg-white/[0.07] flex items-center justify-center text-gray-400 hover:text-kin-gold hover:bg-white/[0.11] transition-all">
                 <Icon size={15} />
               </a>

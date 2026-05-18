@@ -1,0 +1,30 @@
+{
+  "common": {
+    "nav": {
+      "home": "Home",
+      "story": "Our Story",
+      "menu": "Menu",
+      "shop": "Shop",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Kinomori",
+      "tagline": "Asia meets Morocco in every bite",
+      "cta_reserve": "Book a Table",
+      "cta_order": "Order Delivery"
+    },
+    "about": {
+      "title": "Our Story",
+      "origin_title": "Our Roots",
+      "origin_text": "Born in Tamraght, Kinomori fuses Japanese precision with Moroccan soul — every plate tells two stories.",
+      "philosophy_title": "Our Philosophy",
+      "philosophy_text": "We believe in slow food: seasonal ingredients, traditional techniques, and the warmth of sharing.",
+      "chef_title": "The Chef",
+      "chef_text": "15+ years of experience in Tokyo, Osaka, and now Morocco — a bridge between two worlds."
+    },
+    "reviews": {
+      "title": "What They Say",
+      "more": "see more reviews"
+    }
+  }
+}
