@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0; url=/kinomori/" />
+  <script>
+    // SPA redirect for GitHub Pages — send all routes back to index.html
+    var path = window.location.pathname.replace(/^\/kinomori/, '');
+    if (path !== '/' && path !== '/index.html') {
+      window.location.replace('/kinomori/' + path);
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting… <a href="/kinomori/">Click here</a></p>
+</body>
+</html>
