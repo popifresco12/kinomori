@@ -34,7 +34,7 @@ export default function CartDrawer() {
                 <span className="text-2xl">{product.image}</span>
                 <div className="flex-1">
                   <p className="font-semibold text-sm">{t(product.nameKey)}</p>
-                  <p className="text-xs text-gray-500">{product.priceMAD} {t('common.mad')}</p>
+                  <p className="text-xs text-gray-400">{product.priceMAD} {t('common.mad')}</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <button className="p-1 rounded-lg hover:bg-gray-200"><Minus size={14}/></button>

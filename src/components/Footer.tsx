@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Camera, MessageCircle, Globe, Clock } from 'lucide-react';
-import DarkToggle from './DarkToggle';
+
 import { motion } from 'framer-motion';
 
 export default function Footer() {
   const { t } = useTranslation();
   return (
-    <footer className="bg-gray-900 dark:bg-slate-950 text-gray-300 mt-20 transition-colors">
+    <footer className="bg-gray-900 bg-white text-gray-400 mt-20 transition-colors">
       <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
@@ -28,20 +28,18 @@ export default function Footer() {
           <motion.div initial={{opacity:0,y:10}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:.2}} className="flex flex-col items-start md:items-end gap-5">
             <div className="flex gap-3">
               {[Camera,MessageCircle,Globe].map((Icon,i)=>(
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-kin-gold/20 hover:border-kin-gold/40 transition-colors">
+                <a key={i} href="#" className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center hover:bg-kin-gold/20 hover:border-kin-gold/40 transition-colors">
                   <Icon size={18} className="text-gray-400 group-hover:text-white"/>
                 </a>
               ))}
             </div>
-            <div className="flex items-center gap-3">
-              <DarkToggle />
-              <span className="text-xs text-gray-500">{t('common.language')}</span>
+            <div className="flex items-center gap-3"><span className="text-xs text-gray-400">{t('common.language')}</span>
             </div>
           </motion.div>
         </div>
 
         {/* Barra inferior */}
-        <div className="border-t border-white/10 pt-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+        <div className="border-t border-gray-200 pt-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-400">
           <span>© {new Date().getFullYear()} Kinomori. All rights reserved.</span>
           <a href="https://popifresco12.github.io/kinomori/sitemap.xml" className="hover:text-kin-gold transition-colors">sitemap.xml</a>
         </div>

@@ -23,7 +23,7 @@ export default function Shop() {
   return (
     <>
       <MetaTags titleKey="shop.page_title" descriptionKey="hero.tagline" />
-      <div className="grain min-h-screen transition-colors bg-white dark:bg-slate-950">
+      <div className="grain min-h-screen transition-colors bg-white bg-white">
         <div className="max-w-7xl mx-auto px-6 py-14">
           <h1 className="font-display text-5xl font-bold mb-10 text-center">{t('shop.page_title')}</h1>
           <div className="flex flex-wrap gap-3 justify-center mb-10">
@@ -36,10 +36,10 @@ export default function Shop() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((p: any) => (
-              <motion.div key={p.id} whileHover={{ y: -6 }} className="rounded-2xl bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all overflow-hidden">
-                <div className="h-44 flex items-center justify-center text-7xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-700 dark:to-slate-600">{p.image}</div>
+              <motion.div key={p.id} whileHover={{ y: -6 }} className="rounded-2xl bg-white bg-white border border-gray-100 border-gray-200 shadow-sm hover:shadow-xl transition-all overflow-hidden">
+                <div className="h-44 flex items-center justify-center text-7xl bg-gradient-to-br from-gray-50 to-gray-100">{p.image}</div>
                 <div className="p-5 space-y-3">
-                  <p className="font-display text-lg font-bold text-gray-900 dark:text-white">{t(p.nameKey)}</p>
+                  <p className="font-display text-lg font-bold text-gray-900 text-gray-900">{t(p.nameKey)}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-xl font-bold text-kin-gold">{p.priceMAD} {t('common.mad')}</span>
                     <Badge className={stockBadge(p.stock).cls}>{stockBadge(p.stock).label}</Badge>

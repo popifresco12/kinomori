@@ -13,7 +13,7 @@ const Shop    = lazy(() => import('@/pages/ShopPage'));
 const Contact = lazy(() => import('@/pages/ContactPage'));
 
 function LoadingFallback() {
-  return <div className="min-h-screen flex items-center justify-center bg-white dark:bg-slate-950">
+  return <div className="min-h-screen flex items-center justify-center bg-white bg-white">
     <div className="w-8 h-8 border-4 border-kin-gold border-t-transparent rounded-full animate-spin"/>
   </div>;
 }

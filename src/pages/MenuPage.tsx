@@ -23,7 +23,7 @@ export default function MenuPage() {
   const keys = Object.keys(dishes);
 
   return (
-    <div className="grain min-h-screen transition-colors bg-white dark:bg-slate-950 pb-20">
+    <div className="grain min-h-screen transition-colors bg-white bg-white pb-20">
       <MetaTags titleKey="menu.page_title" descriptionKey="about.origin_text" />
 
       {/* ── Hero ── */}
@@ -60,24 +60,24 @@ export default function MenuPage() {
                 viewport={{once:true, margin:'-50px'}}
                 transition={{delay:i*0.07, duration:.5}}
                 whileHover={{y:-4}}
-                className="group relative rounded-3xl overflow-hidden border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 bg-white dark:bg-slate-900"
+                className="group relative rounded-3xl overflow-hidden border border-gray-100 border-gray-200 shadow-sm hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 bg-white bg-white"
               >
-                <div className="h-32 flex items-end justify-center pb-0 text-[5rem] leading-none bg-gradient-to-t from-amber-50 to-transparent dark:from-slate-800 group-hover:scale-110 transition-transform duration-500">
+                <div className="h-32 flex items-end justify-center pb-0 text-[5rem] leading-none bg-gradient-to-t from-amber-50 to-transparent bg-white group-hover:scale-110 transition-transform duration-500">
                   {EMOJI[key] || '🍽️'}
                 </div>
 
                 <div className="p-6 pt-2 space-y-3">
                   <div className="flex items-center justify-between">
-                    <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white">{d.name}</h3>
+                    <h3 className="font-display text-xl font-bold text-gray-900 text-gray-900">{d.name}</h3>
                     <span className="text-2xl font-black text-kin-gold">{d.price} {t('common.mad')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Icon size={14} className="text-amber-500"/>
-                    <span className="text-xs text-amber-700 dark:text-amber-400 font-medium uppercase tracking-wider">
+                    <span className="text-xs text-amber-700 text-amber-600 font-medium uppercase tracking-wider">
                       {t('menu.tag.' + TAG_KEY[key])}
                     </span>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{d.desc}</p>
+                  <p className="text-gray-600 text-gray-500 text-sm leading-relaxed">{d.desc}</p>
                   <button className="mt-2 w-full py-2.5 rounded-xl border-2 border-kin-gold/30 text-kin-gold hover:bg-kin-gold hover:text-kin-dark font-semibold text-sm transition-all">
                     {t('common.add_to_cart')}
                   </button>
@@ -94,7 +94,7 @@ export default function MenuPage() {
           className="rounded-3xl bg-gradient-to-r from-kin-dark to-slate-900 p-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2 className="font-display text-3xl font-bold text-white">{t('menu.banner.title')}</h2>
-            <p className="text-gray-300 mt-2">{t('menu.banner.subtitle')}</p>
+            <p className="text-gray-400 mt-2">{t('menu.banner.subtitle')}</p>
           </div>
           <button className="px-8 py-4 rounded-full bg-kin-gold hover:bg-amber-400 text-kin-dark font-bold shadow-lg shadow-amber-500/30 transition-all whitespace-nowrap">
             {t('nav.contact')}
