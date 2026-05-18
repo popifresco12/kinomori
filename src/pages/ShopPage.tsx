@@ -34,8 +34,7 @@ export default function ShopPage() {
   return (
     <main>
       <MetaTags/>
-      <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-20"
-        style={{background:'linear-gradient(135deg,#0a0a0a,#122212)'}}>
+      <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-20" >
         <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}
           className="font-display text-5xl md:text-7xl font-bold text-white tracking-wide">Shop</motion.h1>
         <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.3}}
@@ -44,7 +43,7 @@ export default function ShopPage() {
           {CATS.map(c => (
             <button key={c} onClick={()=>setCat(c)}
               className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all ${
-                cat===c ? 'bg-kin-gold text-kin-dark' : 'border border-white/12 text-gray-400 hover:border-white/30 hover:text-white'
+                cat===c ? 'bg-[#f59e0b] text-[#0a0a0a]' : 'border border-white/12 text-gray-400 hover:border-white/30 hover:text-white'
               }`}>{c}</button>
           ))}
         </div>
@@ -53,15 +52,15 @@ export default function ShopPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((p,i) => (
             <motion.div key={p.id} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*0.07}}
-              className="rounded-2xl bg-gray-50 overflow-hidden hover:shadow-2xl hover:shadow-black/10 border border-transparent hover:/20 group cursor-pointer transition-all duration-500" style={ borderColor:#f59e0b }>
-              <div className="aspect-square flex items-center justify-center text-8xl bg-gradient-to-br from-gray-100 to-gray-200 group-hover:/10 group-hover:/5 transition-all duration-500" style={ backgroundImage:"linear-gradient(to right,transparent,#f59e0b)" } style={ backgroundImage:"linear-gradient(to right,#f59e0b,transparent)" }>{p.emoji}</div>
+              className="rounded-2xl bg-gray-50 overflow-hidden hover:shadow-2xl hover:shadow-black/10 border border-transparent hover:/20 group cursor-pointer transition-all duration-500" >
+              <div className="aspect-square flex items-center justify-center text-8xl bg-gradient-to-br from-gray-100 to-gray-200 group-hover:/10 group-hover:/5 transition-all duration-500"  >{p.emoji}</div>
               <div className="p-5 space-y-3">
                 <h3 className="font-semibold text-gray-900 text-lg">{p.name}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{p.desc}</p>
                 <div className="flex items-center justify-between pt-1">
-                  <span className="font-display font-bold text-xl" style={ color:#f59e0b }>{p.price}€</span>
+                  <span className="font-display font-bold text-xl" >{p.price}€</span>
                   <button onClick={()=>addToCart(p)}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full text-kin-dark font-semibold text-sm hover:bg-amber-400 transition-all shadow-md hover:shadow-lg active:scale-95" style={ backgroundColor:#f59e0b }>
+                    className="flex items-center gap-2 px-4 py-2 rounded-full text-[#0a0a0a] font-semibold text-sm hover:bg-amber-400 transition-all shadow-md hover:shadow-lg active:scale-95" >
                     <Plus size={15}/> Add
                   </button>
                 </div>
@@ -72,9 +71,9 @@ export default function ShopPage() {
       </section>
       {/* Drawer */}
       <div className="fixed inset-0 z-50 pointer-events-none">
-        <div className={"absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity " + (drawerOpen?'opacity-100':'opacity-0 pointer-events-none')}
+        <div className={"absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity"  + (drawerOpen?'opacity-100':'opacity-0 pointer-events-none')}
           onClick={()=>setDrawerOpen(false)}/>
-        <div className={"absolute right-0 top-0 h-full w-full max-w-md bg-[#0a0a0a] border-l border-white/8 p-6 transform transition-transform pointer-events-auto duration-300 "+(drawerOpen?'translate-x-0':'translate-x-full')}>
+        <div className={"absolute right-0 top-0 h-full w-full max-w-md bg-[#0a0a0a] border-l border-white/8 p-6 transform transition-transform pointer-events-auto duration-300" +(drawerOpen?'translate-x-0':'translate-x-full')}>
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-display text-xl font-bold text-white">Your Order</h2>
             <button onClick={()=>setDrawerOpen(false)} className="text-gray-400 hover:text-white text-sm">✕</button>
@@ -82,7 +81,7 @@ export default function ShopPage() {
           {!cart.length && <p className="text-gray-600 text-sm">Your cart is empty</p>}
           {cart.map((item,i)=>(
             <div key={i} className="flex justify-between items-center py-3 border-b border-white/6">
-              <div><p className="text-white text-sm font-medium">{item.name}</p><p className="text-sm" style={ color:#f59e0b }>{item.price}€ × {item.qty}</p></div>
+              <div><p className="text-white text-sm font-medium">{item.name}</p><p className="text-sm" >{item.price}€ × {item.qty}</p></div>
               <span className="text-white font-semibold">{item.price*item.qty}€</span>
             </div>
           ))}
@@ -90,7 +89,7 @@ export default function ShopPage() {
             <div className="mt-6 pt-4 border-t border-white/8">
               <div className="flex justify-between mb-4"><span className="text-gray-400">Total</span>
                 <span className="font-display font-bold text-white text-xl">{cart.reduce((s,i)=>s+i.price*i.qty,0)}€</span></div>
-              <button className="w-full py-3 rounded-full text-kin-dark font-bold hover:bg-amber-400 transition-all shadow-lg" style={ backgroundColor:#f59e0b }>
+              <button className="w-full py-3 rounded-full text-[#0a0a0a] font-bold hover:bg-amber-400 transition-all shadow-lg" >
                 Checkout
               </button>
             </div>

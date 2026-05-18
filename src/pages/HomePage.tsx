@@ -7,7 +7,7 @@ import { ArrowDownRight, Star, Quote } from 'lucide-react';
 import * as THREE from 'three';
 import { useTranslation } from 'react-i18next';
 
-// ── Shader: "Australian Night Ocean" — verde bosque + vetas doradas ──
+// ── Shader:" Australian Night Ocean" — verde bosque + vetas doradas ──
 function OceanShader() {
   const ref = useRef<any>(null);
   const mouse = useRef({ x:.5, y:.5 });
@@ -123,7 +123,7 @@ export default function Home() {
   const { t } = useTranslation();
 
   return (
-    <main style={{ background:'#0a0a0a' }}>
+    <main >
       {/* ── HERO — Three.js + Shader + Partículas ── */}
       <section className="relative h-[100svh] w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -143,13 +143,12 @@ export default function Home() {
         {/* Overlay text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
           <motion.div initial={{opacity:0,y:-22}} animate={{opacity:1,y:0}} transition={{duration:.9}}
-            className="mb-5 px-6 py-2.5 rounded-full text-[11px] font-black tracking-[.32em] uppercase border /30 /90 backdrop-blur-md /[0.07]" style={ borderColor:#f59e0b } style={ color:#f59e0b } style={ backgroundColor:#f59e0b }>
+            className="mb-5 px-6 py-2.5 rounded-full text-[11px] font-black tracking-[.32em] uppercase border /30 /90 backdrop-blur-md /[0.07]"  >
             KINOMORI · {t('hero.tagline')}
           </motion.div>
 
           <motion.h1 initial={{opacity:0,y:50}} animate={{opacity:1,y:0}} transition={{duration:1.2,delay:.12}}
-            className="font-display text-[clamp(3.5rem,10vw,9rem)] font-black text-white tracking-[.04em] leading-[0.88]"
-            style={{textShadow:'0 1px #ffffff10, 0 2px 30px #000000a8, 0 8px 80px #0006'}}>
+            className="font-display text-[clamp(3.5rem,10vw,9rem)] font-black text-white tracking-[.04em] leading-[0.88]" >
             {t('hero.title')}
           </motion.h1>
 
@@ -161,7 +160,7 @@ export default function Home() {
           <motion.div initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{duration:.85,delay:.52}}
             className="mt-11 flex flex-wrap gap-4 justify-center">
             <a href="#contact"
-              className="px-9 py-4 rounded-full hover:bg-amber-400 text-kin-dark font-bold text-base transition-all shadow-[0_8px_32px_rgba(245,158,11,.55)] hover:shadow-[0_14px_48px_rgba(245,158,11,.75)] hover:-translate-y-0.5 active:scale-[.97]" style={ backgroundColor:#f59e0b }>
+              className="px-9 py-4 rounded-full hover:bg-amber-400 text-[#0a0a0a] font-bold text-base transition-all shadow-[0_8px_32px_rgba(245,158,11,.55)] hover:shadow-[0_14px_48px_rgba(245,158,11,.75)] hover:-translate-y-0.5 active:scale-[.97]" >
               {t('hero.cta_reserve')}
             </a>
             <a href="#menu"
@@ -192,7 +191,7 @@ export default function Home() {
           {['origin','philosophy','chef'].map((k,i)=>(
             <motion.div key={k} initial={{opacity:0,y:32}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*.15,duration:.7}}
               whileHover={{y:-8}} className="p-10 rounded-3xl bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-200/80 shadow-sm hover:shadow-2xl">
-              <div className="w-14 h-14 rounded-2xl /15 flex items-center justify-center text-2xl mb-7" style={ backgroundColor:#f59e0b }>
+              <div className="w-14 h-14 rounded-2xl /15 flex items-center justify-center text-2xl mb-7" >
                 {k==='origin'?'🏔️':k==='philosophy'?'🧭':'👨‍🍳'}
               </div>
               <h3 className="font-display text-2xl font-bold mb-4 text-gray-900">{t('about.'+k+'_title')}</h3>
@@ -213,10 +212,10 @@ export default function Home() {
               <motion.blockquote key={i} initial={{opacity:0,scale:.95}} whileInView={{opacity:1,scale:1}} viewport={{once:true}} transition={{delay:i*.12}}
                 whileHover={{scale:1.04,y:-4}} className="p-10 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-2xl">
                 <div className="flex gap-1.5 mb-6">{[1,2,3,4,5].map(n=><Star key={n} size={16} className={n<=rv.rating?'text-yellow-400 fill-yellow-400':'text-gray-200'}/>)}</div>
-                <Quote className="/35 mb-5" style={ color:#f59e0b } size={26}/>
+                <Quote className="/35 mb-5" size={26}/>
                 <p className="text-gray-700 leading-relaxed mb-6 italic text-[15px]">"{rv.text}"</p>
                 <footer className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full /15 flex items-center justify-center text-sm font-extrabold" style={ color:#f59e0b } style={ backgroundColor:#f59e0b }>{rv.name[0]}</div>
+                  <div className="w-10 h-10 rounded-full /15 flex items-center justify-center text-sm font-extrabold" >{rv.name[0]}</div>
                   <div>
                     <span className="block text-sm font-semibold text-gray-800">{rv.name}</span>
                     <span className="text-xs text-gray-400">{rv.rating}.0 Review</span>
@@ -230,13 +229,13 @@ export default function Home() {
 
       {/* ── CTA ─────────────────────────────── */}
       <section className="relative py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r via-[#0f2210] /60" style={ backgroundImage:"linear-gradient(to right,transparent,#f59e0b)" } style={ backgroundImage:"linear-gradient(to right,#1a2e1a,transparent)" }/>
+        <div className="absolute inset-0 bg-gradient-to-r via-[#0f2210] /60"  />
         <motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:.9}}
           className="relative max-w-3xl mx-auto text-center px-6 space-y-6">
-          <span className="text-sm font-black tracking-[.25em] uppercase" style={ color:#f59e0b }>Kinomori · Tamraght</span>
+          <span className="text-sm font-black tracking-[.25em] uppercase" >Kinomori · Tamraght</span>
           <h2 className="font-display text-4xl md:text-6xl font-bold text-white">{t('hero.tagline')}</h2>
           <div className="flex gap-4 justify-center pt-4">
-            <a href="/contact" className="px-9 py-4 rounded-full bg-white text-kin-dark font-bold hover: hover:shadow-lg hover: transition-all duration-300" style={ boxShadow:"0 10px 15px -3px rgba(245,158,11,0.3)" } style={ backgroundColor:#f59e0b }>{t('hero.cta_reserve')}</a>
+            <a href="/contact" className="px-9 py-4 rounded-full bg-white text-[#0a0a0a] font-bold hover: hover:shadow-lg hover: transition-all duration-300"  >{t('hero.cta_reserve')}</a>
             <a href="/shop" className="px-9 py-4 rounded-full border-2 border-white/30 text-white hover:bg-white/10 font-semibold transition-all duration-300">Shop</a>
           </div>
         </motion.div>

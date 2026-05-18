@@ -23,8 +23,7 @@ export default function MenuPage() {
   return (
     <main>
       <MetaTags/>
-      <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-20"
-        style={{background:'linear-gradient(135deg,#0a0a0a,#122212)'}}>
+      <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-20" >
         <motion.h1 initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}
           className="font-display text-5xl md:text-7xl font-bold text-white tracking-wide">
           Menu
@@ -45,12 +44,12 @@ export default function MenuPage() {
             <div className="grid sm:grid-cols-2 gap-6">
               {items.filter(i=>i.cat===cat.key).map((item,i)=>(
                 <motion.div key={i} initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}}
-                  className="flex justify-between items-start p-5 rounded-2xl bg-gray-50 hover:/8 border border-transparent hover:/20 transition-all group cursor-pointer" style={ borderColor:#f59e0b } style={ backgroundColor:#f59e0b }>
+                  className="flex justify-between items-start p-5 rounded-2xl bg-gray-50 hover:/8 border border-transparent hover:/20 transition-all group cursor-pointer"  >
                   <div>
-                    <h3 className="font-semibold text-gray-900 group-hover:text-kin-dark transition-colors">{item.name}</h3>
+                    <h3 className="font-semibold text-gray-900 group-hover:text-[#0a0a0a] transition-colors">{item.name}</h3>
                     <p className="text-sm text-gray-500 mt-1">{item.desc}</p>
                   </div>
-                  <span className="font-display font-bold text-lg ml-4" style={ color:#f59e0b }>{item.price}€</span>
+                  <span className="font-display font-bold text-lg ml-4" >{item.price}€</span>
                 </motion.div>
               ))}
             </div>
