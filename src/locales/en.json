@@ -105,6 +105,62 @@
       "name": "Teppanyaki Set",
       "desc": "Grilled vegetables, seafood, and wagyu on iron plate",
       "price": "180"
+    },
+    "dishes": {
+      "dimsum": {
+        "name": "Cantonese Dim Sum",
+        "desc": "Steamed buns, pork dumplings, and siu mai — handmade every morning",
+        "price": "45"
+      },
+      "ramen": {
+        "name": "Tonkotsu Ramen",
+        "desc": "18-hour pork bone broth, chashu, ajitama egg, nori, spring onion",
+        "price": "75"
+      },
+      "sushi": {
+        "name": "Chef's Omakase Nigiri",
+        "desc": "10-piece seasonal selection — fresh fish flown in weekly",
+        "price": "120"
+      },
+      "teppanyaki": {
+        "name": "Wagyu Teppanyaki Set",
+        "desc": "A5 wagyu, seasonal vegetables, garlic rice on iron plate",
+        "price": "220"
+      },
+      "padthai": {
+        "name": "Moroccan-Thai Pad Thai",
+        "desc": "Rice noodles, prawns, tofu, tamarind sauce — our signature fusion",
+        "price": "80"
+      },
+      "duck": {
+        "name": "Peking Duck Wrap",
+        "desc": "Crispy five-spice duck, hoisin, cucumber, scallion in house pancake",
+        "price": "95"
+      },
+      "cocktails": {
+        "name": "Sake Mojito",
+        "desc": "Premium sake, fresh mint, lime, sparkling water",
+        "price": "55"
+      },
+      "dessert": {
+        "name": "Mochi Ice Cream Trio",
+        "desc": "Matcha, mango, black sesame — served with osmanthus tea",
+        "price": "40"
+      }
+    },
+    "tag": {
+      "handmade": "Handmade Daily",
+      "broth": "18-Hour Broth",
+      "seasonal": "Seasonal Fish",
+      "wagyu": "A5 Wagyu",
+      "signature": "Our Signature",
+      "crispy": "Crispy Skin",
+      "premium": "Premium Sake",
+      "house": "House Favorite"
+    },
+    "banner": {
+      "title": "Book a Table",
+      "subtitle": "Reserve now and enjoy the full Kinomori experience."
     }
   }
 }

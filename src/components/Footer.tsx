@@ -1,39 +1,50 @@
 import { useTranslation } from 'react-i18next';
-import { MapPin, Phone, Mail, Instagram, Facebook, Globe } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook, Globe, Clock } from 'lucide-react';
 import DarkToggle from './DarkToggle';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
   const { t } = useTranslation();
   return (
     <footer className="bg-gray-900 dark:bg-slate-950 text-gray-300 mt-20 transition-colors">
-      <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
-        <div>
-          <h3 className="font-display text-2xl text-white mb-4">KINOMORI</h3>
-          <p className="text-sm leading-relaxed">{t('hero.tagline')}</p>
-        </div>
-        <div className="space-y-2 text-sm">
-          {[{Icon:MapPin,label:'address'},{Icon:Phone,label:'phone'},{Icon:Mail,label:'email'},{Icon:Globe,label:'web'}].map(({Icon,label})=>(
-            <div key={label} className="flex items-center gap-2">
-              <Icon size={14}/> <span>{label==='address'?'Tamraght, Morocco':label==='phone'?'+212 5XX-XXXXXX':label==='email'?'hello@kinomori.ma':'kinomori.ma'}</span>
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-4">
-            {[Instagram,Facebook].map((Icon,i)=>(
-              <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-kin-gold/30 transition-colors">
-                <Icon size={18} className="text-white"/>
-              </a>
+      <div className="max-w-7xl mx-auto px-6 py-14">
+        <div className="grid md:grid-cols-3 gap-10 mb-10">
+          {/* Brand */}
+          <motion.div initial={{opacity:0,y:10}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
+            <h3 className="font-display text-2xl text-white mb-3 tracking-wide">KINOMORI</h3>
+            <p className="text-sm leading-relaxed text-gray-400">{t('hero.tagline')}</p>
+          </motion.div>
+
+          {/* Contacto */}
+          <motion.div initial={{opacity:0,y:10}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:.1}} className="space-y-3 text-sm">
+            {[{Icon:MapPin,label:'Tamraght, Morocco'},{Icon:Phone,label:'+212 5XX-XXXXXX'},{Icon:Mail,label:'hello@kinomori.ma'},{Icon:Clock,label:'9:00 AM — 11:00 PM'}].map(({Icon,label},i)=>(
+              <div key={i} className="flex items-center gap-3">
+                <Icon size={15} className="text-kin-gold"/> <span>{label}</span>
+              </div>
             ))}
-          </div>
-          <div className="flex items-center gap-3">
-            <DarkToggle />
-            <span className="text-xs text-gray-500">Dark mode</span>
-          </div>
+          </motion.div>
+
+          {/* Social + Dark Toggle */}
+          <motion.div initial={{opacity:0,y:10}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:.2}} className="flex flex-col items-start md:items-end gap-5">
+            <div className="flex gap-3">
+              {[Instagram,Facebook,Globe].map((Icon,i)=>(
+                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-kin-gold/20 hover:border-kin-gold/40 transition-colors">
+                  <Icon size={18} className="text-gray-400 group-hover:text-white"/>
+                </a>
+              ))}
+            </div>
+            <div className="flex items-center gap-3">
+              <DarkToggle />
+              <span className="text-xs text-gray-500">{t('common.language')}</span>
+            </div>
+          </motion.div>
         </div>
-      </div>
-      <div className="border-t border-gray-800 dark:border-slate-900 py-5 text-center text-xs text-gray-500">
-        © {new Date().getFullYear()} Kinomori. All rights reserved.
+
+        {/* Barra inferior */}
+        <div className="border-t border-white/10 pt-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+          <span>© {new Date().getFullYear()} Kinomori. All rights reserved.</span>
+          <a href="https://kinomori.ma/sitemap.xml" className="hover:text-kin-gold transition-colors">sitemap.xml</a>
+        </div>
       </div>
     </footer>
   );

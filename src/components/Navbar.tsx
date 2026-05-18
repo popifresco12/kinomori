@@ -2,13 +2,15 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, Menu, X } from 'lucide-react';
+import { useState } from 'react';
 import CartDrawer from './CartDrawer';
 import DarkToggle from './DarkToggle';
 
 export default function Navbar() {
   const { t } = useTranslation();
   const loc = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
   const links = [
     { to: '/', key:'home' },
     { to: '/story', key:'story' },
@@ -17,26 +19,51 @@ export default function Navbar() {
     { to: '/contact', key:'contact' },
   ];
   return (
-    <motion.nav initial={{y:-30,opacity:0}} animate={{y:0,opacity:1}} transition={{duration:.5,ease:'easeOut'}}
-      className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-gray-200/60">
+    <motion.nav initial={{y:-20,opacity:0}} animate={{y:0,opacity:1}} transition={{duration:.4,ease:'easeOut'}}
+      className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-gray-100 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-kin-dark hover:text-kin-gold transition-colors">
+        {/* Logo */}
+        <Link to="/" className="font-display text-2xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-kin-gold transition-colors">
           KINOMORI
         </Link>
+
+        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1">
           {links.map(l => (
             <Link key={l.to} to={l.to}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-                loc.pathname === l.to ? 'bg-kin-gold/15 text-kin-gold' : 'text-gray-600 hover:bg-gray-100 hover:text-kin-dark'
-              }`}
-            >
+              className={`px-3 py-2 rounded-xl text-sm font-medium transition-all ${
+                loc.pathname===l.to ? 'bg-kin-gold/15 text-kin-gold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800'
+              }`}>
               {t('nav.' + l.key)}
             </Link>
           ))}
         </div>
-        <DarkToggle />
-        <CartDrawer />
+
+        {/* Right side */}
+        <div className="flex items-center gap-2">
+          <DarkToggle />
+          <CartDrawer />
+          <button onClick={()=>setMobileOpen(!mobileOpen)}
+            className="md:hidden p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-800">
+            {mobileOpen ? <X size={20}/> : <Menu size={20}/>}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <motion.div initial={{opacity:0,height:0}} animate={{opacity:1,height:'auto'}}
+          className="md:hidden border-t border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-950 px-6 pb-4 space-y-1">
+          {links.map(l => (
+            <Link key={l.to} to={l.to} onClick={()=>setMobileOpen(false)}
+              className={`block py-3 px-4 rounded-xl text-base font-medium transition-all ${
+                loc.pathname===l.to ? 'bg-kin-gold/15 text-kin-gold' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800'
+              }`}>
+              {t('nav.'+l.key)}
+            </Link>
+          ))}
+        </motion.div>
+      )}
     </motion.nav>
   );
 }

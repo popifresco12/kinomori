@@ -105,6 +105,62 @@
       "name": "Set Teppanyaki",
       "desc": "Légumes grillés, fruits de mer et wagyu sur plaque de fer",
       "price": "180"
+    },
+    "dishes": {
+      "dimsum": {
+        "name": "Dim Sum Cantonais",
+        "desc": "Brioches vapeur, dumplings de porc et siu mai — fait main chaque matin",
+        "price": "45"
+      },
+      "ramen": {
+        "name": "Ramen Tonkotsu",
+        "desc": "Bouillon d'os de porc 18h, chashu, œuf ajitama, nori, ciboule",
+        "price": "75"
+      },
+      "sushi": {
+        "name": "Omakase du Chef",
+        "desc": "Sélection de 10 pièces saisonnières — poisson frais livré chaque semaine",
+        "price": "120"
+      },
+      "teppanyaki": {
+        "name": "Set Teppanyaki Wagyu",
+        "desc": "Wagyu A5, légumes de saison, riz à l'ail sur plaque de fer",
+        "price": "220"
+      },
+      "padthai": {
+        "name": "Pad Thai Fusion Maroc",
+        "desc": "Nouilles de riz, crevettes, tofu, sauce tamarin — notre création signature",
+        "price": "80"
+      },
+      "duck": {
+        "name": "Canard Pékin en Crêpe",
+        "desc": "Canard croustillant aux cinq épices, sauce hoisin, concombre et ciboule",
+        "price": "95"
+      },
+      "cocktails": {
+        "name": "Cocktail Sake Mojito",
+        "desc": "Sake premium, menthe fraîche, citron vert et eau gazeuse",
+        "price": "55"
+      },
+      "dessert": {
+        "name": "Trio de Mochi Glacé",
+        "desc": "Matcha, mangue, sésame noir — servi avec thé à l'osmanthus",
+        "price": "40"
+      }
+    },
+    "tag": {
+      "handmade": "Fait Main",
+      "broth": "Bouillon 18h",
+      "seasonal": "Poisson de Saison",
+      "wagyu": "Wagyu A5",
+      "signature": "Notre Création",
+      "crispy": "Peau Grillée",
+      "premium": "Sake Premium",
+      "house": "Coup de Cœur"
+    },
+    "banner": {
+      "title": "Réservez une Table",
+      "subtitle": "Réservez maintenant et profitez de l'expérience Kinomori."
     }
   }
 }

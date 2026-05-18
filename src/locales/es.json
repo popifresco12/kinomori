@@ -105,6 +105,62 @@
       "name": "Set Teppanyaki",
       "desc": "Verduras a la parrilla, marisco y wagyu sobre plancha de hierro",
       "price": "180"
+    },
+    "dishes": {
+      "dimsum": {
+        "name": "Dim Sum Cantonés",
+        "desc": "Bollos al vapor, dumplings de cerdo y siu mai — hechos a mano cada mañana",
+        "price": "45"
+      },
+      "ramen": {
+        "name": "Ramen Tonkotsu",
+        "desc": "Caldo de hueso de cerdo de 18h, chashu, huevo ajitama, nori, cebolleta",
+        "price": "75"
+      },
+      "sushi": {
+        "name": "Omakase del Chef",
+        "desc": "10 piezas de selección estacional — pescado fresco llegado semanalmente",
+        "price": "120"
+      },
+      "teppanyaki": {
+        "name": "Set Teppanyaki Wagyu",
+        "desc": "Wagyu A5, verduras de temporada, arroz con ajo sobre plancha",
+        "price": "220"
+      },
+      "padthai": {
+        "name": "Pad Thai Fusión Marroquí",
+        "desc": "Fideos de arroz, gambas, tofu, salsa tamarindo — nuestra fusión insignia",
+        "price": "80"
+      },
+      "duck": {
+        "name": "Pato Pekinés en Tortita",
+        "desc": "Pato crujiente con cinco especias, salsa hoisin, pepino y cebolleta",
+        "price": "95"
+      },
+      "cocktails": {
+        "name": "Cóctel de Sake Mojito",
+        "desc": "Sake premium, menta fresca, lima y agua con gas",
+        "price": "55"
+      },
+      "dessert": {
+        "name": "Trio de Mochi Helado",
+        "desc": "Matcha, mango y sésamo negro — servido con té de osmanthus",
+        "price": "40"
+      }
+    },
+    "tag": {
+      "handmade": "Hecho a Mano",
+      "broth": "Caldo de 18h",
+      "seasonal": "Pescado Estacional",
+      "wagyu": "Wagyu A5",
+      "signature": "Nuestra Creación",
+      "crispy": "Piel Crujiente",
+      "premium": "Sake Premium",
+      "house": "Favorito de la Casa"
+    },
+    "banner": {
+      "title": "Reserva tu Mesa",
+      "subtitle": "Reserva ahora y vive la experiencia completa de Kinomori."
     }
   }
 }
