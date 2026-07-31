@@ -29,5 +29,27 @@
     "contact": {
       "sent": "Message sent!"
     }
+  },
+  "seo": {
+    "home": {
+      "title": "Kinomori - Authentic Japanese Dining in Tangier",
+      "description": "Authentic Japanese restaurant in Tangier. Fresh sushi, handmade ramen, dim sum and house specialties. Book your table."
+    },
+    "menu": {
+      "title": "Menu - Kinomori",
+      "description": "Explore our menu: fresh sushi, artisanal ramen, dim sum and seasonal dishes. Locally sourced ingredients."
+    },
+    "story": {
+      "title": "Our Story - Kinomori",
+      "description": "Discover Kinomori's story: Japanese-Moroccan fusion, slow food philosophy and our chef's journey across two culinary worlds."
+    },
+    "shop": {
+      "title": "Shop - Kinomori",
+      "description": "Buy artisanal products: sauces, condiments, ramen kits and exclusive merchandise from Kinomori."
+    },
+    "contact": {
+      "title": "Contact & Reservations - Kinomori",
+      "description": "Book your table at Kinomori Tangier. Hours, location and contact form for private events."
+    }
   }
 }

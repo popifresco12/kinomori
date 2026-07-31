@@ -25,4 +25,69 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");
 }
 
-button:focus-visible { outline: none; box-shadow: 0 0 0 2px #f59e0b73, 0 0 0 6px #f59e0b26; }
+/* ── Focus visible for all interactive elements ── */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #f59e0b73, 0 0 0 6px #f59e0b26;
+  border-radius: 4px;
+}
+
+/* CTA Buttons - enhanced focus */
+.btn-primary,
+.btn-secondary,
+button[class*="cta"],
+a[class*="cta"],
+[role="button"]:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 2px #f59e0b73, 
+    0 0 0 6px #f59e0b26,
+    0 4px 20px #f59e0b33;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Links focus */
+a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #f59e0b73, 0 0 0 4px #f59e0b26;
+  border-radius: 2px;
+  text-decoration: underline;
+}
+
+/* Form inputs focus */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #f59e0b73, 0 0 0 4px #f59e0b26;
+  border-color: #f59e0b;
+}
+
+/* Card/container focus (for keyboard navigation) */
+[tabindex="0"]:focus-visible,
+article:focus-visible,
+section:focus-visible,
+div[role="region"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #f59e0b73, 0 0 0 6px #f59e0b26;
+  border-radius: 8px;
+}
+
+/* Reduced motion - disable animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :focus-visible {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #000;
+  }
+}

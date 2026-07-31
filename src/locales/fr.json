@@ -29,5 +29,27 @@
     "contact": {
       "sent": "Message envoyé !"
     }
+  },
+  "seo": {
+    "home": {
+      "title": "Kinomori - Expérience Gastronomique Japonaise à Tanger",
+      "description": "Restaurant japonais authentique à Tanger. Sushi frais, ramen artisanal, dim sum et spécialités maison. Réservez votre table."
+    },
+    "menu": {
+      "title": "Menu - Kinomori",
+      "description": "Découvrez notre menu : sushi frais, ramen artisanal, dim sum et plats de saison. Ingrédients locaux."
+    },
+    "story": {
+      "title": "Notre Histoire - Kinomori",
+      "description": "Découvrez l'histoire de Kinomori : fusion japonaise-marocaine, philosophie slow food et le parcours de notre chef."
+    },
+    "shop": {
+      "title": "Boutique - Kinomori",
+      "description": "Achetez des produits artisanaux : sauces, condiments, kits de ramen et merchandising exclusif."
+    },
+    "contact": {
+      "title": "Contact et Réservations - Kinomori",
+      "description": "Réservez votre table chez Kinomori Tanger. Horaires, localisation et formulaire de contact pour événements privés."
+    }
   }
 }

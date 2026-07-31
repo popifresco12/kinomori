@@ -29,5 +29,27 @@
     "contact": {
       "sent": "¡Mensaje enviado!"
     }
+  },
+  "seo": {
+    "home": {
+      "title": "Kinomori - Experiencia Gastronómica Japonesa en Tánger",
+      "description": "Restaurante japonés auténtico en Tánger. Sushi, ramen, dim sum y especialidades caseras. Reserva tu mesa."
+    },
+    "menu": {
+      "title": "Menú - Kinomori",
+      "description": "Descubre nuestro menú: sushi fresco, ramen artesanal, dim sum y platos de temporada. Ingredientes locales."
+    },
+    "story": {
+      "title": "Nuestra Historia - Kinomori",
+      "description": "Conoce la historia de Kinomori: fusión japonesa-marroquí, filosofía slow food y la trayectoria de nuestro chef."
+    },
+    "shop": {
+      "title": "Tienda - Kinomori",
+      "description": "Compra productos artesanales: salsas, condimentos, kits de ramen y merchandising exclusivo."
+    },
+    "contact": {
+      "title": "Contacto y Reservas - Kinomori",
+      "description": "Reserva tu mesa en Kinomori Tánger. Horarios, ubicación y formulario de contacto para eventos privados."
+    }
   }
 }
