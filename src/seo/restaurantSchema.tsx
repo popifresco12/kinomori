@@ -16,11 +16,6 @@ const schema = {
   telephone: "+212 5XX-XXXXXX",
   url: "https://popifresco12.github.io/kinomori",
   openingHours: "Mo-Su 09:00-23:00",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "150+",
-  },
 };
 
 export default function RestaurantSchema() {
